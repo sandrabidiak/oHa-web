@@ -13,12 +13,12 @@ export default {
     msg: String,
   },
   data() {
-    return{ searchInput: ''};
+    return { searchInput: '' };
   },
   methods: {
-    search(){
-      console.log('search() called!', this.searchInput);
-      alert(this.searchInput);
+    search() {
+      //console.log('search() called!', this.searchInput);
+      this.$store.dispatch('getSuggestions');
     },
   },
 };
