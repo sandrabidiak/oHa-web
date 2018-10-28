@@ -1,15 +1,12 @@
 <template>
   <div>
-    LocationPage placeholder
-    <router-link :to="{name: 'Search'}">
-      <button>Cancel</button>
-    </router-link>
+    ResultComponent placeholder
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LocationPage',
+  name: 'ResultComponent',
 };
 </script>
 

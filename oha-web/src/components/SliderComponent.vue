@@ -1,15 +1,15 @@
 <template>
   <div>
-    LocationPage placeholder
-    <router-link :to="{name: 'Search'}">
-      <button>Cancel</button>
+    SliderComponent placeholder
+    <router-link :to="{name: 'Locations'}">
+      <button>Change Location</button>
     </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LocationPage',
+  name: 'SliderComponent',
 };
 </script>
 
