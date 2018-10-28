@@ -2,7 +2,7 @@
   <div>
     LocationPage placeholder
     <router-link :to="{name: 'Search'}">
-      <button>Cancel</button>
+      <button class="btn btn-primary">Cancel</button>
     </router-link>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <input type="text" v-model="searchInput">
-    <button @click="search()">Search</button>
+    <button class="btn btn-primary" @click="search()">Search</button>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     search() {
-      //console.log('search() called!', this.searchInput);
+      // console.log('search() called!', this.searchInput);
       this.$store.dispatch('getSuggestions');
     },
   },

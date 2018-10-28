@@ -2,7 +2,7 @@
   <div>
     SliderComponent placeholder
     <router-link :to="{name: 'Locations'}">
-      <button>Change Location</button>
+      <button class="btn btn-primary">Change Location</button>
     </router-link>
   </div>
 </template>
