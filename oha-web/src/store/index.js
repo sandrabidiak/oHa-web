@@ -3,6 +3,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 
+import serviceConstants from '../constants/serviceConstants';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -16,12 +18,8 @@ export default new Vuex.Store({
   },
   actions: {
     getSuggestions(context) {
-      const baseUrl = 'https://dev.unibsc.myoha.at/rest';
-      const accessToken = 'dW5pYnNjOjlrcmo2aDVRaFZnZWt2V0F1YQ==';
-      const authorizationHeader = 'Basic ' + accessToken;
-      const headers = { Authorization: authorizationHeader };
-
-      const serviceUrl = baseUrl + '/v1/request/suggestions';
+      const serviceUrl = serviceConstants.baseUrl + '/v1/request/suggestions';
+      const headers = { Authorization: serviceConstants.authorizationHeader };
 
       const searchObject = {
         ss: ['mountain'],
