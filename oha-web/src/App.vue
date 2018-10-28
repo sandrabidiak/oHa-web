@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <SearchPage msg="Welcome to oha-web app"/>
-    <br>
-    <SuggestionsComponent />
+    <SearchPage/>
   </div>
 </template>
 
 <script>
 import SearchPage from './components/SearchPage.vue';
-import SuggestionsComponent from './components/SuggestionsComponent.vue';
 
 export default {
   name: 'app',
   components: {
     SearchPage,
-    SuggestionsComponent,
   },
 };
 </script>
