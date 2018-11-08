@@ -14,8 +14,8 @@
         <td>{{s.sst}}</td>
         <td>{{s.stt}}</td>
       </tr>
-    </tbody>  
-    </table>  
+    </tbody>
+    </table>
   </div>
 </template>
 
@@ -23,12 +23,12 @@
 export default {
   name: 'SuggestionsComponent',
   computed: {
-      suggestions() {
-          return this.$store.state.suggestions;
-      },
+    suggestions() {
+      return this.$store.state.suggestions;
+    },
   },
   data() {
-    return{ };
+    return { };
   },
   methods: {
   },

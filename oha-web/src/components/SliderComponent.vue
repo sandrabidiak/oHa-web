@@ -1,6 +1,9 @@
 <template>
   <div>
     SliderComponent placeholder
+    <input type="range" min="1" max="25" step="1" v-model="sliderValue">
+    {{sliderValue}}
+    <br>
     <router-link :to="{name: 'Locations'}">
       <button class="btn btn-primary">Change Location</button>
     </router-link>
@@ -10,6 +13,9 @@
 <script>
 export default {
   name: 'SliderComponent',
+  data() {
+    return { sliderValue: '1' };
+  },
 };
 </script>
 

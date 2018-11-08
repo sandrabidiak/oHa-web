@@ -19,6 +19,7 @@ export default {
     search() {
       // console.log('search() called!', this.searchInput);
       this.$store.dispatch('getSuggestions');
+      this.$store.dispatch('getResults');
     },
   },
 };

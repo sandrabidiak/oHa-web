@@ -10,10 +10,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     suggestions: [],
+    results: [],
   },
   mutations: {
     setSuggestions(state, suggestions) {
       state.suggestions = suggestions;
+    },
+    setResults(state, results) {
+      state.results = results;
     },
   },
   actions: {
@@ -32,6 +36,23 @@ export default new Vuex.Store({
 
       axios.post(serviceUrl, searchObject, { headers })
         .then(result => context.commit('setSuggestions', result.data))
+        .catch(console.error);
+    },
+    getResults(context) {
+      const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
+      const headers = { Authorization: serviceConstants.authorizationHeader };
+
+      const searchObject = {
+        ss: ['mountain'],
+        dkm: 1,
+        gla: 47.800101,
+        glo: 13.043421,
+        sr: 0,
+        lo: 'en',
+      };
+
+      axios.post(serviceUrl, searchObject, { headers })
+        .then(result => context.commit('setResults', result.data))
         .catch(console.error);
     },
   },
