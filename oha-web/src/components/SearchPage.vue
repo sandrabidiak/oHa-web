@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-success full-page-height">
     <SliderComponent/>
     <br>
     <SearchComponent msg="Welcome to oha-web app"/>
