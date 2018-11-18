@@ -1,25 +1,42 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input type="text" v-model="searchInput">
+    <!-- input type="text" v-model="searchInput" -->
+    <vue-tags-input v-model="tag" :tags="tags" @tags-changed="newTags => onTagsChange(newTags)"/>
     <button class="btn btn-primary" @click="search()">Search</button>
   </div>
 </template>
 
 <script>
+import VueTagsInput from '@johmun/vue-tags-input';
+
 export default {
   name: 'SearchComponent',
+  components: {
+    VueTagsInput,
+  },
+  computed: {
+    tags() {
+      return this.$store.state.inputTags;
+    }
+  },
   props: {
     msg: String,
   },
   data() {
-    return { searchInput: '' };
+    return { 
+      searchInput: '',
+      tag: '',
+    };
   },
   methods: {
     search() {
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
     },
+    onTagsChange(tags){
+      this.$store.commit('setInputTags', tags);
+   }
   },
 };
 </script>

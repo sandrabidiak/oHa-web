@@ -13,6 +13,7 @@ export default new Vuex.Store({
     results: [],
     selectedLocation: undefined,
     selectedSliderValue: '1',
+    inputTags: [],
   },
   mutations: {
     setSuggestions(state, suggestions) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     setSliderValue(state, sliderValue) {
       state.selectedSliderValue = sliderValue;
     },
+    setInputTags(state, tags) {
+      state.inputTags = tags;
+    },
   },
   actions: {
     getSuggestions(context) {
@@ -34,9 +38,10 @@ export default new Vuex.Store({
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
       const sliderValue = context.state.selectedSliderValue;
+      const searchTerms = context.state.inputTags.map(tag => tag.text);
 
       const searchObject = {
-        ss: ['mountain'],
+        ss: searchTerms,
         dkm: sliderValue,
         gla: location.gla,
         glo: location.glo,
@@ -53,9 +58,10 @@ export default new Vuex.Store({
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
       const sliderValue = context.state.selectedSliderValue;
+      const searchTerms = context.state.inputTags.map(tag => tag.text);
 
       const searchObject = {
-        ss: ['mountain'],
+        ss: searchTerms,
         dkm: sliderValue,
         gla: location.gla,
         glo: location.glo,
