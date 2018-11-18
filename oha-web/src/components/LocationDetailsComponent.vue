@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'SliderComponent',
+  name: 'LocationDetailsComponent',
   computed: {
     location() {
       return this.$store.state.selectedLocation;

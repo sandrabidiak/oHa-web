@@ -1,6 +1,6 @@
 <template>
   <div class="bg-success full-page-height">
-    <SliderComponent/>
+    <LocationDetailsComponent/>
     <br>
     <SearchComponent msg="Welcome to oha-web app"/>
     <br>
@@ -13,7 +13,7 @@
 <script>
 import SearchComponent from './SearchComponent.vue';
 import SuggestionsComponent from './SuggestionsComponent.vue';
-import SliderComponent from './SliderComponent.vue';
+import LocationDetailsComponent from './LocationDetailsComponent.vue';
 import ResultComponent from './ResultComponent.vue';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   components: {
     SearchComponent,
     SuggestionsComponent,
-    SliderComponent,
+    LocationDetailsComponent,
     ResultComponent,
   },
 };
