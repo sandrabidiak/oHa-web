@@ -1,7 +1,7 @@
 <template>
   <div class="bg-warning full-page-height">
     <router-link :to="{name: 'Search'}">
-      <button type="button" class="btn btn-secondary">Cancel</button>
+      <button v-if="location" type="button" class="btn btn-secondary">Cancel</button>
     </router-link>
     <section class="container-fluid" style="margin-top:70px">
       <section class="row justify-content-around" style="height:150px">
@@ -49,8 +49,13 @@ import locationConstants from '../constants/locationConstants';
 
 export default {
   name: 'LocationPage',
+  computed: {
+    location() {
+      return this.$store.state.selectedLocation;
+    },
+  },
   methods: {
-    selectLocation: function (cityName) {
+    selectLocation(cityName) {
       this.$store.commit('setSelectedLocation', locationConstants[cityName]);
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{location.name}}
+    {{getLocationName()}}
     <input type="range" min="1" max="25" step="1" v-model="sliderValue">
     {{sliderValue}}
     <br>
@@ -20,6 +20,11 @@ export default {
   },
   data() {
     return { sliderValue: '1' };
+  },
+  methods: {
+    getLocationName() {
+      return this.location ? this.location.name : 'No location selected!';
+    },
   },
 };
 </script>
