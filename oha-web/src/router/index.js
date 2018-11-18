@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import LocationPage from '../components/LocationPage.vue';
-import SearchPage from '../components/SearchPage.vue';
+import LocationPage from '../components/locations/LocationPage.vue';
+import SearchPage from '../components/search/SearchPage.vue';
 
 Vue.use(Router);
 

@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import locationConstants from '../constants/locationConstants';
+import locationConstants from '../../constants/locationConstants';
 
 export default {
   name: 'LocationPage',
