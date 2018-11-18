@@ -11,6 +11,7 @@ export default new Vuex.Store({
   state: {
     suggestions: [],
     results: [],
+    selectedLocation: undefined,
   },
   mutations: {
     setSuggestions(state, suggestions) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     setResults(state, results) {
       state.results = results;
+    },
+    setSelectedLocation(state, location) {
+      state.selectedLocation = location;
     },
   },
   actions: {

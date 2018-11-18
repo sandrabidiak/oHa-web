@@ -1,6 +1,6 @@
 <template>
   <div>
-    SliderComponent placeholder
+    {{location.name}}
     <input type="range" min="1" max="25" step="1" v-model="sliderValue">
     {{sliderValue}}
     <br>
@@ -13,6 +13,11 @@
 <script>
 export default {
   name: 'SliderComponent',
+  computed: {
+    location() {
+      return this.$store.state.selectedLocation;
+    },
+  },
   data() {
     return { sliderValue: '1' };
   },
