@@ -19,5 +19,8 @@ export default new Router({
     path: '/search',
     name: 'Search',
     component: SearchPage,
+  }, {
+    path: '*',
+    redirect: '/',
   }],
 });
