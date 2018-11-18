@@ -12,6 +12,7 @@ export default new Vuex.Store({
     suggestions: [],
     results: [],
     selectedLocation: undefined,
+    selectedSliderValue: '1',
   },
   mutations: {
     setSuggestions(state, suggestions) {
@@ -23,16 +24,20 @@ export default new Vuex.Store({
     setSelectedLocation(state, location) {
       state.selectedLocation = location;
     },
+    setSliderValue(state, sliderValue) {
+      state.selectedSliderValue = sliderValue;
+    },
   },
   actions: {
     getSuggestions(context) {
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/suggestions';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
+      const sliderValue = context.state.selectedSliderValue;
 
       const searchObject = {
         ss: ['mountain'],
-        dkm: 1,
+        dkm: sliderValue,
         gla: location.gla,
         glo: location.glo,
         sr: 0,
@@ -47,10 +52,11 @@ export default new Vuex.Store({
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
+      const sliderValue = context.state.selectedSliderValue;
 
       const searchObject = {
         ss: ['mountain'],
-        dkm: 1,
+        dkm: sliderValue,
         gla: location.gla,
         glo: location.glo,
         sr: 0,
