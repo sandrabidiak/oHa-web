@@ -28,12 +28,13 @@ export default new Vuex.Store({
     getSuggestions(context) {
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/suggestions';
       const headers = { Authorization: serviceConstants.authorizationHeader };
+      const location = context.state.selectedLocation;
 
       const searchObject = {
         ss: ['mountain'],
         dkm: 1,
-        gla: 47.800101,
-        glo: 13.043421,
+        gla: location.gla,
+        glo: location.glo,
         sr: 0,
         lo: 'en',
       };
@@ -45,12 +46,13 @@ export default new Vuex.Store({
     getResults(context) {
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
+      const location = context.state.selectedLocation;
 
       const searchObject = {
         ss: ['mountain'],
         dkm: 1,
-        gla: 47.800101,
-        glo: 13.043421,
+        gla: location.gla,
+        glo: location.glo,
         sr: 0,
         lo: 'en',
       };
