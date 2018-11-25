@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import LocationPage from '../components/locations/LocationPage.vue';
 import SearchPage from '../components/search/SearchPage.vue';
+import DetailPage from '../components/detail/DetailPage.vue';
 
 Vue.use(Router);
 
@@ -19,6 +20,10 @@ export default new Router({
     path: '/search',
     name: 'Search',
     component: SearchPage,
+  }, {
+    path: '/detail',
+    name: 'Deatil',
+    component: DetailPage,
   }, {
     path: '*',
     redirect: '/',

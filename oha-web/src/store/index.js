@@ -10,7 +10,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     suggestions: [],
-    results: [],
+    results: {},
     selectedLocation: undefined,
     selectedSliderValue: '1',
     inputTags: [],
