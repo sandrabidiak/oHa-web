@@ -1,1 +1,21 @@
 /* global structural styles */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.cancel-row {
+    height: 5%;
+}
+
+.location-row {
+    height: 94%;
+}
+
+.location-row-height {
+    height: 150px;
+}
+
+.full-page-height {
+    height: 100%;
+}

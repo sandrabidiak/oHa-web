@@ -1,9 +1,16 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div>
     <!-- input type="text" v-model="searchInput" -->
-    <vue-tags-input v-model="tag" :tags="tags" @tags-changed="newTags => onTagsChange(newTags)"/>
-    <button class="btn btn-primary" @click="search()">Search</button>
+    <section class ="container-fluid">
+      <section class="row justify-content-center">
+        <div class="col-8">
+          <vue-tags-input v-model="tag" :tags="tags" @tags-changed="newTags => onTagsChange(newTags)"/>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary" @click="search()">Search</button>
+        </div>
+      </section>
+    </section>
   </div>
 </template>
 
@@ -43,7 +50,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
+/*h3 {
   margin: 40px 0 0;
 }
 ul {
@@ -56,5 +63,5 @@ li {
 }
 a {
   color: #42b983;
-}
+}*/
 </style>

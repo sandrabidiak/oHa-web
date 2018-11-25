@@ -1,44 +1,65 @@
 <template>
   <div class="bg-warning full-page-height">
-    <router-link :to="{name: 'Search'}">
-      <button v-if="location" type="button" class="btn btn-secondary">Cancel</button>
-    </router-link>
-    <section class="container-fluid" style="margin-top:70px">
-      <section class="row justify-content-around" style="height:150px">
-        <div class="col-sm-4">
+    <section class="container-fluid h-100">
+      <section class="row cancel-row">
+        <section class="col">
           <router-link :to="{name: 'Search'}">
-            <button class="btn px-4 py-4 btn-block" style="background-color:#ff8100" @click="selectLocation()">Current Location</button>
+            <button v-if="location" type="button" class="btn btn-secondary">Cancel</button>
           </router-link>
-        </div>
-        <div class="col-sm-4">
-          <router-link :to="{name: 'Search'}">
-            <button class="btn px-4 py-4 btn-block" style="background-color:#ff8100" @click="selectLocation('poertschach')">Pörtschach am Wörthersee</button>
-          </router-link>
-        </div>
+        </section>
       </section>
-      <section class="row justify-content-around" style="height:150px">
-        <div class="col-sm-4">
-          <router-link :to="{name: 'Search'}">
-            <button class="btn px-4 py-4 btn-block" style="background-color:#ff8100" @click="selectLocation('hallstatt')">Hallstatt</button>
-          </router-link>
-        </div>
-        <div class="col-sm-4">
-          <router-link :to="{name: 'Search'}">
-            <button class="btn px-4 py-4 btn-block" style="background-color:#ff8100" @click="selectLocation('stubaital')">Stubaital</button>
-          </router-link>
-        </div>
-      </section>
-      <section class="row justify-content-around" style="height:150px">
-        <div class="col-sm-4">
-          <router-link :to="{name: 'Search'}">
-            <button class="btn px-4 py-4 btn-block" style="background-color:#ff8100" @click="selectLocation('salzburg')">Salzburg</button>
-          </router-link>
-        </div>
-        <div class="col-sm-4">
-          <router-link :to="{name: 'Search'}">
-            <button class="btn px-4 py-4 btn-block" style="background-color:#ff8100" @click="selectLocation('vienna')">Vienna</button>
-          </router-link>
-        </div>
+      <section class="row location-row">
+        <section class="col align-self-center">
+          <h1 class="display-5 text-center">Choose your location</h1>
+          <section class="row justify-content-around align-items-center location-row-height">
+            <div class="col-md-4">
+              <router-link class="invisible-link" :to="{name: 'Search'}">
+                <button class="btn px-4 py-4 btn-block location-btn-style" 
+                  @click="selectLocation()">Current Location
+                </button>
+              </router-link>
+            </div>
+            <div class="col-md-4">
+              <router-link class="invisible-link" :to="{name: 'Search'}">
+                <button class="btn px-4 py-4 btn-block location-btn-style" 
+                  >Pörtschach am Wörthersee
+                </button>
+              </router-link>
+            </div>
+          </section>
+          <section class="row justify-content-around align-items-center location-row-height">
+            <div class="col-md-4">
+              <router-link class="invisible-link" :to="{name: 'Search'}">
+                <button class="btn px-4 py-4 btn-block location-btn-style"
+                  @click="selectLocation('hallstatt')">Hallstatt
+                </button>
+              </router-link>
+            </div>
+            <div class="col-md-4">
+              <router-link class="invisible-link" :to="{name: 'Search'}">
+                <button class="btn px-4 py-4 btn-block location-btn-style" 
+                  @click="selectLocation('stubaital')">Stubaital
+                </button>
+              </router-link>
+            </div>
+          </section>
+          <section class="row justify-content-around align-items-center location-row-height">
+            <div class="col-md-4">
+              <router-link class="invisible-link" :to="{name: 'Search'}">
+                <button class="btn px-4 py-4 btn-block location-btn-style" 
+                  @click="selectLocation('salzburg')">Salzburg
+                </button>
+              </router-link>
+            </div>
+            <div class="col-md-4">
+              <router-link class="invisible-link" :to="{name: 'Search'}">
+                <button class="btn px-4 py-4 btn-block location-btn-style" 
+                  @click="selectLocation('vienna')">Vienna
+                </button>
+              </router-link>
+            </div>
+          </section>
+        </section>  
       </section>
     </section>
   </div>

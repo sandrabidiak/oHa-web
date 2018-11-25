@@ -1,21 +1,20 @@
 <template>
-  <section class="container-fluid">
-    <section class="row">
-      <div class="col-sm-3">
-        {{getLocationName()}}
-      </div>
-      <div class="col-sm-6">
-        <b-form-input @change="onSliderChange($event)" :value="sliderValue" type="range" min="1" max="25" step="1">
-        </b-form-input>
-        {{sliderValue}}
-      </div>
-      <div class="col-sm-3">
-        <router-link :to="{name: 'Locations'}">
-          <button class="btn btn-primary">Change Location</button>
-        </router-link>
-      </div>
-    </section>
-  </section>
+<b-navbar type="light" variant="info">
+  <div class="container">
+    <div class="col-3">
+      <span class="navbar-text mr-2">Your location:</span>  
+      {{getLocationName()}}
+    </div>
+    <b-nav-form>
+      <b-form-input class = "mr-2" @change="onSliderChange($event)" :value="sliderValue" type="range" min="1" max="25" step="1">
+      </b-form-input>
+      {{sliderValue}}
+      <router-link :to="{name: 'Locations'}">
+        <button class="btn ml-4">Change Location</button>
+      </router-link>
+    </b-nav-form>
+  </div>
+</b-navbar>
 </template>
 
 <script>

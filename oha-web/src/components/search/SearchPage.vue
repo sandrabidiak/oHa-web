@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-success full-page-height">
+  <div class="bg-success h-100">
     <LocationDetailsComponent/>
     <br>
     <SearchComponent msg="Welcome to oha-web app"/>
     <br>
     <SuggestionsComponent/>
-    <br> 
+    <br>
     <ResultComponent/>
   </div>
 </template>

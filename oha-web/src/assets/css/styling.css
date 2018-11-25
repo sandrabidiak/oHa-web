@@ -1,12 +1,23 @@
 /* global styles */
-html {
-    height: 100%;
-}
 
 body {
-    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.full-page-height {
-    height: 100%;
+.location-btn-style {
+    background-color:#ff8100;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
+.invisible-link{
+    text-decoration: none !important;
+}
+
+.location-btn-style:hover {
+    box-shadow: 2px 2px rgb(245, 92, 3);
+    text-decoration: none;
+}
+
+
