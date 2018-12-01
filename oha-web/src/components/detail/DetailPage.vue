@@ -4,7 +4,20 @@
       <router-link :to="{name: 'Search'}">
         <button type="button" class="btn back-btn-style">Back</button>
       </router-link>
-      <div>{{selectedResult.ti}}</div>
+      <div>
+        {{selectedResult.ti}}
+      </div>
+      <div v-html="selectedResult.sd"></div>
+      <div>
+        {{"Image"}}
+      </div>
+      
+      <div v-html="selectedResult.ld"></div>
+      <div>
+        <a v-bind:href="selectedResult.ur" target="_blank">Homa Page</a>
+      </div>
+      <div v-html="selectedResult.es"></div>
+      <div v-html="selectedResult.cr"></div>
     </div>
     <div v-if="!selectedResult">
       Oops! ERROR!
