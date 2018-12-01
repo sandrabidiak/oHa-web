@@ -16,6 +16,13 @@ html, body {
     height: 150px;
 }
 
-.full-page-height {
+.full-page {
     height: 100%;
+    width: 100%;
 }
+
+.cancel-btn-style, .back-btn-style {
+    margin-top: 2px;
+    margin-left: 2px;
+}
+

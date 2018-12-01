@@ -2,22 +2,63 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #e4bd67;
+    color: #283018;
 }
 
-.location-btn-style {
-    background-color:#ff8100;
+.location-btn-style, .search-btn-style {
+    background-color:#729f98;
+    color: #f0eceb;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.invisible-link{
+.cancel-btn-style, .back-btn-style {
+    background-color: #e4bd67;
+    border-color: #729f98;
+    color: #729f98;
+}
+
+.invisible-link {
     text-decoration: none !important;
 }
 
-.location-btn-style:hover {
-    box-shadow: 2px 2px rgb(245, 92, 3);
+.location-btn-style:hover, .search-btn-style:hover {
+    box-shadow: 2px 2px #486a66;
     text-decoration: none;
 }
 
+.cancel-btn-style:hover, .back-btn-style:hover {
+    background-color: #729f98;
+    color: #f0eceb;
+}
 
+.location-detail-style {
+    background-color: #283018;
+    color: #f0eceb;
+}
+
+.change-location-btn {
+    background-color: #f0eceb;
+    color: #283018;
+}
+
+.change-location-btn:hover {
+    box-shadow: 2px 2px #c8bbb6;
+    text-decoration: none;
+}
+
+/*
+.vue-tag-input{
+    background-color: #f0eceb;
+    border-radius: 6px;
+}
+
+.valid {
+    background-color: #729f98; 
+    color: #f0eceb;
+    border-radius: 18px; 
+    display: flex;
+}
+*/

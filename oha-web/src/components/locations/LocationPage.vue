@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-warning full-page-height">
+  <div class="full-page">
     <section class="container-fluid h-100">
       <section class="row cancel-row">
         <section class="col">
           <router-link :to="{name: 'Search'}">
-            <button v-if="location" type="button" class="btn btn-secondary">Cancel</button>
+            <button v-if="location" type="button" class="btn cancel-btn-style">Cancel</button>
           </router-link>
         </section>
       </section>

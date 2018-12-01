@@ -1,13 +1,12 @@
 <template>
   <div>
-    <!-- input type="text" v-model="searchInput" -->
     <section class ="container-fluid">
-      <section class="row justify-content-center">
-        <div class="col-8">
+      <section class="row justify-content-md-center">
+        <div class="col-9 col-md-7">
           <vue-tags-input v-model="tag" :tags="tags" @tags-changed="newTags => onTagsChange(newTags)"/>
         </div>
-        <div class="col-2">
-          <button class="btn btn-primary" @click="search()">Search</button>
+        <div class="col-3 col-md-2">
+          <button class="btn search-btn-style" @click="search()">Search</button>
         </div>
       </section>
     </section>

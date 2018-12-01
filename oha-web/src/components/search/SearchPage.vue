@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-success h-100">
+  <div class="full-page">
     <LocationDetailsComponent/>
     <br>
     <SearchComponent msg="Welcome to oha-web app"/>
