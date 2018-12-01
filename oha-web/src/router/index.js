@@ -21,8 +21,8 @@ export default new Router({
     name: 'Search',
     component: SearchPage,
   }, {
-    path: '/detail',
-    name: 'Deatil',
+    path: '/detail/:index',
+    name: 'Detail',
     component: DetailPage,
   }, {
     path: '*',

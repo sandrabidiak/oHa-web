@@ -22,7 +22,7 @@
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn px-4 py-4 btn-block location-btn-style" 
-                  >Pörtschach am Wörthersee
+                  @click="selectLocation('poertschach')">Pörtschach am Wörthersee
                 </button>
               </router-link>
             </div>

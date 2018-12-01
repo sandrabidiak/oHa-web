@@ -10,7 +10,9 @@
     <tbody>
       <tr v-for="(r,index) in results.fa" :key ="index">
         <td>{{index+1}}</td>
-        <td>{{r.ti}}</td>
+        <router-link :to="{ name: 'Detail', params: {index: index} }">
+          <td>{{r.ti}}</td>
+        </router-link>
       </tr>
     </tbody>
     </table>
