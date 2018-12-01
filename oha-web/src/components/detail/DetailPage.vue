@@ -17,11 +17,8 @@ export default {
   name: 'DetailPage',
   computed: {
     selectedResult() {
-      const i = this.$route.params.index;
-      if(isNaN(i) || i < 0 || i > (this.$store.state.results.fa.length - 1)) {
-        return undefined;
-      }
-      return this.$store.state.results.fa[this.$route.params.index];
+      const id = this.$route.params.id;
+      return this.$store.state.results.fa.find(r => r.rid === id);
     },
   },
 };

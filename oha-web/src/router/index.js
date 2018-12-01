@@ -21,7 +21,7 @@ export default new Router({
     name: 'Search',
     component: SearchPage,
   }, {
-    path: '/detail/:index',
+    path: '/detail/:id',
     name: 'Detail',
     component: DetailPage,
   }, {
