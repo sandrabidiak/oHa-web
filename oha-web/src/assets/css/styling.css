@@ -3,7 +3,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e4bd67;
-    color: #283018;
+    color:  #394422;
 }
 
 .location-btn-style, .search-btn-style {
@@ -35,18 +35,37 @@ body {
 }
 
 .location-detail-style {
-    background-color: #283018;
+    background-color: #394422;
     color: #f0eceb;
 }
 
 .change-location-btn {
     background-color: #f0eceb;
-    color: #283018;
+    color:  #394422;
 }
 
 .change-location-btn:hover {
     box-shadow: 2px 2px #c8bbb6;
     text-decoration: none;
+}
+
+.footer {
+    background-color: #394422;
+    color: #f0eceb;
+    text-align: left;
+}
+
+div > p > a {
+    color: #f0eceb;
+}
+
+div > p > a:hover {
+    color: #f0eceb;
+}
+
+.divider {
+    border-top-width: 2px !important;
+    border-top-color: #729f98 !important;
 }
 
 /*

@@ -8,7 +8,7 @@ html, body {
     height: 5%;
 }
 
-.location-row {
+.location-row, .detail-row {
     height: 94%;
 }
 
@@ -24,5 +24,14 @@ html, body {
 .cancel-btn-style, .back-btn-style {
     margin-top: 2px;
     margin-left: 2px;
+}
+
+.footer{
+    position: fixed;
+    padding-left: 10px;
+    padding-top: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
