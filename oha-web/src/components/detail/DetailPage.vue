@@ -31,6 +31,9 @@ export default {
   computed: {
     selectedResult() {
       const id = this.$route.params.id;
+      if(!this.$store.state.results.fa){
+        return undefined;
+      }
       return this.$store.state.results.fa.find(r => r.rid === id);
     },
   },
