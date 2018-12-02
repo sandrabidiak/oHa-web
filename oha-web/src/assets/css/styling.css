@@ -6,7 +6,7 @@ body {
     color:  #394422;
 }
 
-.location-btn-style, .search-btn-style {
+.location-btn-style, .search-btn-style, .home-page-btn {
     background-color:#729f98;
     color: #f0eceb;
     overflow: hidden;
@@ -24,7 +24,7 @@ body {
     text-decoration: none !important;
 }
 
-.location-btn-style:hover, .search-btn-style:hover {
+.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover {
     box-shadow: 2px 2px #486a66;
     text-decoration: none;
 }
@@ -55,12 +55,20 @@ body {
     text-align: left;
 }
 
-div > p > a {
+div > p > a, button > a, .footer > div > a {
     color: #f0eceb;
 }
 
-div > p > a:hover {
+div > p > a:hover, div > a:hover, button > a:hover, .footer > div > a {
     color: #f0eceb;
+}
+
+div > a {
+    color: #729f98;
+}
+
+div > a:hover {
+    color: #729f98;
 }
 
 .divider {
