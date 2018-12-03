@@ -14,14 +14,14 @@
           <section class="row justify-content-around align-items-center location-row-height">
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
-                <button class="btn location-btn-style" 
+                <button class="btn location-btn-style"
                   @click="selectLocation()">Current Location
                 </button>
               </router-link>
             </div>
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
-                <button class="btn location-btn-style" 
+                <button class="btn location-btn-style"
                   @click="selectLocation('poertschach')">Pörtschach am Wörthersee
                 </button>
               </router-link>
@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
-                <button class="btn location-btn-style" 
+                <button class="btn location-btn-style"
                   @click="selectLocation('stubaital')">Stubaital
                 </button>
               </router-link>
@@ -46,20 +46,20 @@
           <section class="row justify-content-around align-items-center location-row-height">
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
-                <button class="btn location-btn-style" 
+                <button class="btn location-btn-style"
                   @click="selectLocation('salzburg')">Salzburg
                 </button>
               </router-link>
             </div>
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
-                <button class="btn location-btn-style" 
+                <button class="btn location-btn-style"
                   @click="selectLocation('vienna')">Vienna
                 </button>
               </router-link>
             </div>
           </section>
-        </section>  
+        </section>
       </section>
     </section>
   </div>

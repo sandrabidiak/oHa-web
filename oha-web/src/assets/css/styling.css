@@ -24,14 +24,24 @@ body {
     text-decoration: none !important;
 }
 
-.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover {
+.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover  {
     box-shadow: 2px 2px #486a66;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .cancel-btn-style:hover, .back-btn-style:hover {
     background-color: #729f98;
     color: #f0eceb;
+}
+
+.card-style {
+    background-color: #729f98;
+    color: #f0eceb;
+}
+
+.card-text {
+    color: #f0eceb;
+    text-align: left;
 }
 
 .location-detail-style {
@@ -59,7 +69,7 @@ div > p > a, button > a, .footer > div > a {
     color: #f0eceb;
 }
 
-div > p > a:hover, div > a:hover, button > a:hover, .footer > div > a {
+div > p > a:hover, div > a:hover, button > a:hover, .footer > div > a:hover {
     color: #f0eceb;
 }
 
