@@ -16,6 +16,15 @@ html, body {
     height: 150px;
 }
 
+.location-btn-style {
+    display: block;
+    width: 100%;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
 .full-page {
     height: 100%;
     width: 100%;
@@ -26,8 +35,16 @@ html, body {
     margin-left: 2px;
 }
 
+.carousel-style {
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    overflow: hidden;
+}
+
 .footer{
-    position: fixed;
+    position: absolute;
     padding-left: 10px;
     padding-top: 10px;
     left: 0;

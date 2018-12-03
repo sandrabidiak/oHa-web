@@ -9,7 +9,7 @@
             </router-link>
           </section>
         </section>
-        <section class="row mt-4 detail-row">
+        <section class="row mt-2 detail-row">
           <section class="col align-self-center">
             <section class="row justify-content-center align-items-center">
               <section class="col-md-4">
@@ -23,11 +23,12 @@
                   </button>
                 </div>
               </section>
-              <section class="col-md-6">
+              <section class="col-md-6 mt-2">
                  <b-carousel id="imageCarousel" controls indicators :interval="0">
-                    <b-carousel-slide v-for="(image,index) in selectedResult.im" :key ="index" 
+                    <b-carousel-slide v-for="(image,index) in selectedResult.im" :key ="index"
                       class="carousel-item">
-                      <img slot="img" class="d-block img-fluid w-100" v-bind:src="image.im">
+                      <img slot="img" class="d-block img-fluid carousel-style"
+                      v-bind:src="image.im">
                     </b-carousel-slide>
                  </b-carousel>
               </section>
