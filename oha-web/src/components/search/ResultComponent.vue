@@ -12,13 +12,13 @@
         </section>
       </section>
       <section class="row">
-         <section class="col-lg-3 col-md-4 col-sm-6"
+         <section class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch"
           v-for="(result,index) in results.fa" :key ="index">
           <div class="card-deck">
             <div class="card card-style">
               <router-link :to="{ name: 'Detail', params: {id: result.rid} }">
                 <img class="card-img-top" v-bind:src="result.im[0].im" alt="CardImg">
-                <div class="card-body">
+                <div class="card-block p-2">
                   <p class="card-text">{{result.ti}}</p>
                 </div>
               </router-link>
