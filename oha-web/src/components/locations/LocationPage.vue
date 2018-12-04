@@ -1,14 +1,14 @@
 <template>
   <div class="full-page">
     <section class="container-fluid h-100">
-      <section class="row cancel-row">
+      <section class="row">
         <section class="col">
           <router-link :to="{name: 'Search'}">
             <button v-if="location" type="button" class="btn cancel-btn-style">Cancel</button>
           </router-link>
         </section>
       </section>
-      <section class="row location-row">
+      <section class="row">
         <section class="col align-self-center">
           <h1 class="display-5 text-center">Choose your location</h1>
           <section class="row justify-content-around align-items-center location-row-height">

@@ -1,15 +1,15 @@
 <template>
   <div class="full-page">
-    <div v-if="selectedResult">
+    <div v-if="selectedResult" class="h-100">
       <section class="container-fluid h-100">
-        <section class="row cancel-row">
+        <section class="row">
           <section class="col">
             <router-link :to="{name: 'Search'}">
               <button type="button" class="btn back-btn-style">Back</button>
             </router-link>
           </section>
         </section>
-        <section class="row mt-2 detail-row">
+        <section class="row my-3">
           <section class="col align-self-center">
             <section class="row justify-content-center align-items-center">
               <section class="col-md-4">
@@ -38,12 +38,19 @@
               <section class="col-md-10">
                 <div v-html="selectedResult.ld"></div>
                 <div v-html="selectedResult.es"></div>
-                <div class="footer footer-ref" v-html="selectedResult.cr"></div>
               </section>
             </section>
           </section>
         </section>
+        <!-- section class="row mt-2">
+          <section class="col">
+            <div class="footer" v-html="selectedResult.cr"></div>
+          </section>
+        </section -->
       </section>
+      <footer class="footer">
+        <div v-html="selectedResult.cr"></div>
+      </footer>
     </div>
     <div v-if="!selectedResult">
       Oops! ERROR!
