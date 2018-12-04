@@ -42,11 +42,6 @@
             </section>
           </section>
         </section>
-        <!-- section class="row mt-2">
-          <section class="col">
-            <div class="footer" v-html="selectedResult.cr"></div>
-          </section>
-        </section -->
       </section>
       <footer class="footer">
         <div v-html="selectedResult.cr"></div>
