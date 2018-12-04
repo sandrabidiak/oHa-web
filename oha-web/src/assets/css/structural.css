@@ -72,6 +72,19 @@ html, body {
     }
 }
 
+.tag-btn-style {
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 18px;
+}
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
 .footer{
     position: absolute;
     padding-left: 10px;

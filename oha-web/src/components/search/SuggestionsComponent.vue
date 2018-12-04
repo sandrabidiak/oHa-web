@@ -1,6 +1,25 @@
 <template>
   <div>
-    <table>
+    <section class="container-fluid">
+      <section class="row">
+        <section class="col-12">
+          <div class="border-top divider my-4"></div>
+        </section>
+      </section>
+      <section class="row justify-content-center">
+        <section class="col text-left mb-3">
+          <p>Suggestions:</p>
+        </section>
+        <section class="col-md-10">
+          <button class="btn tag-btn-style"
+            v-for="(s,index) in suggestions" :key ="index">
+            {{s.sst}}
+            <i class="arrow-up"></i>
+          </button>
+        </section>
+      </section>
+    </section>
+    <!-- table>
       <thead>
         <tr>
           <th>#</th>
@@ -15,7 +34,7 @@
         <td>{{s.stt}}</td>
       </tr>
     </tbody>
-    </table>
+    </table -->
   </div>
 </template>
 

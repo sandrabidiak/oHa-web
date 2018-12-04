@@ -2,6 +2,16 @@
   <div class="full-page">
     <section class="container-fluid h-100">
       <section class="row">
+        <section class="col">
+          <div class="border-top divider my-4"></div>
+        </section>
+      </section>
+      <section class="row">
+        <section class="col text-left mb-3">
+          <p>Results found: {{results.fr}} of {{results.trc}}</p>
+        </section>
+      </section>
+      <section class="row">
          <section class="col-lg-3 col-md-4 col-sm-6"
           v-for="(result,index) in results.fa" :key ="index">
           <div class="card-deck">

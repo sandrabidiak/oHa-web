@@ -20,11 +20,17 @@ body {
     color: #729f98;
 }
 
+.tag-btn-style{
+    background-color: #729f98;
+    color: #f0eceb;
+} 
+
 .invisible-link {
     text-decoration: none !important;
 }
 
-.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover  {
+.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, 
+.card-style:hover, .tag-btn-style  {
     box-shadow: 2px 2px #486a66;
     text-decoration: none !important;
 }
@@ -86,8 +92,12 @@ div > a:hover {
     border-top-color: #729f98 !important;
 }
 
+.arrow-up {
+    border-bottom: 5px solid #f0eceb;
+}   
+
 /*
-.vue-tag-input{
+.vue-tag-input > .input{
     background-color: #f0eceb;
     border-radius: 6px;
 }
@@ -97,5 +107,11 @@ div > a:hover {
     color: #f0eceb;
     border-radius: 18px; 
     display: flex;
+}
+
+.vue-tag-input > .input > .tags > .tag.valid {
+    background-color: #729f98;
+    color: #f0eceb;
+    border-radius: 18px;
 }
 */
