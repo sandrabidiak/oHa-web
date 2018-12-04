@@ -11,30 +11,27 @@
           <p>Suggestions:</p>
         </section>
         <section class="col-md-10">
-          <button class="btn tag-btn-style"
-            v-for="(s,index) in suggestions" :key ="index">
-            {{s.sst}}
-            <i class="arrow-up"></i>
-          </button>
+          <span v-for="(s,index) in suggestions" :key ="index">
+            <button v-if="s.stt == 'TERM_RULE_SUGGESTION'" class="btn term-rule-suggestion">
+              {{s.sst}}
+              <i class="arrow-up"></i>
+            </button>
+            <button v-if="s.stt === 'TERM_SPECIALIZATION'" class="btn term-specialization">
+              {{s.sst}}
+              <i class="arrow-up"></i>
+            </button>
+            <button v-if="s.stt === 'TERM_GENERALIZATION'" class="btn term-generalization">
+              {{s.sst}}
+              <i class="arrow-up"></i>
+            </button>
+            <button v-if="s.stt === 'TERM_TOP_LEVEL'" class="btn term-top-level">
+              {{s.sst}}
+              <i class="arrow-up"></i>
+            </button>
+          </span>
         </section>
       </section>
     </section>
-    <!-- table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Title</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-    <tbody>
-      <tr v-for="(s,index) in suggestions" :key ="index">
-        <td>{{index+1}}</td>
-        <td>{{s.sst}}</td>
-        <td>{{s.stt}}</td>
-      </tr>
-    </tbody>
-    </table -->
   </div>
 </template>
 

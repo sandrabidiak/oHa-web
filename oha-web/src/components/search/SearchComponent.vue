@@ -3,7 +3,8 @@
     <section class ="container-fluid">
       <section class="row justify-content-md-center">
         <div class="col-9 col-md-7">
-          <vue-tags-input v-model="tag" :tags="tags" @tags-changed="newTags => onTagsChange(newTags)"/>
+          <vue-tags-input v-model="tag" :tags="tags"
+            @tags-changed="newTags => onTagsChange(newTags)"/>
         </div>
         <div class="col-3 col-md-2">
           <button class="btn search-btn-style" @click="search()">Search</button>
@@ -24,13 +25,13 @@ export default {
   computed: {
     tags() {
       return this.$store.state.inputTags;
-    }
+    },
   },
   props: {
     msg: String,
   },
   data() {
-    return { 
+    return {
       searchInput: '',
       tag: '',
     };
@@ -40,9 +41,9 @@ export default {
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
     },
-    onTagsChange(tags){
+    onTagsChange(tags) {
       this.$store.commit('setInputTags', tags);
-   }
+    },
   },
 };
 </script>

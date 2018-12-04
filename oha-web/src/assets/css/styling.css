@@ -20,17 +20,33 @@ body {
     color: #729f98;
 }
 
-.tag-btn-style{
+.term-rule-suggestion {
     background-color: #729f98;
     color: #f0eceb;
 } 
+
+.term-specialization {
+    background-color: #86aca7;
+    color: #f0eceb;
+}
+
+.term-generalization {
+    background-color: #a4c1bd;
+    color: #f0eceb;
+}
+
+.term-top-level {
+    background-color: #c2d6d3;
+    color: #5d8982;
+}
 
 .invisible-link {
     text-decoration: none !important;
 }
 
-.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, 
-.card-style:hover, .tag-btn-style  {
+.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover, 
+.term-rule-suggestion:hover, .term-specialization:hover, 
+.term-generalization:hover, .term-top-level:hover  {
     box-shadow: 2px 2px #486a66;
     text-decoration: none !important;
 }
