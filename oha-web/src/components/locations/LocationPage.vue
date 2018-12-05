@@ -4,7 +4,9 @@
       <section class="row">
         <section class="col">
           <router-link :to="{name: 'Search'}">
-            <button v-if="location" type="button" class="btn cancel-btn-style">Cancel</button>
+            <button v-if="location" type="button" class="btn cancel-btn-style">
+                <i class="fa fa-times"></i>
+            </button>
           </router-link>
         </section>
       </section>

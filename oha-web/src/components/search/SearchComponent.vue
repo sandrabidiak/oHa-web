@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="full-page">
     <section class ="container-fluid">
       <section class="row justify-content-md-center">
-        <div class="col-9 col-md-7">
+        <div class="col-9 col-md-6">
           <vue-tags-input v-model="tag" :tags="tags"
             @tags-changed="newTags => onTagsChange(newTags)"/>
         </div>

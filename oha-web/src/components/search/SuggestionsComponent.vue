@@ -14,19 +14,19 @@
           <span v-for="(s,index) in suggestions" :key ="index">
             <button v-if="s.stt == 'TERM_RULE_SUGGESTION'" class="btn term-rule-suggestion">
               {{s.sst}}
-              <i class="arrow-up"></i>
+              <i class="fa fa-angle-up"></i>
             </button>
             <button v-if="s.stt === 'TERM_SPECIALIZATION'" class="btn term-specialization">
               {{s.sst}}
-              <i class="arrow-up"></i>
+              <i class="fa fa-angle-up"></i>
             </button>
             <button v-if="s.stt === 'TERM_GENERALIZATION'" class="btn term-generalization">
               {{s.sst}}
-              <i class="arrow-up"></i>
+              <i class="fa fa-angle-up"></i>
             </button>
             <button v-if="s.stt === 'TERM_TOP_LEVEL'" class="btn term-top-level">
               {{s.sst}}
-              <i class="arrow-up"></i>
+              <i class="fa fa-angle-up"></i>
             </button>
           </span>
         </section>
