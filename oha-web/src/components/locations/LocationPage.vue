@@ -2,13 +2,23 @@
   <div class="full-page">
     <section class="container-fluid h-100">
       <section class="row">
-        <section class="col">
+        <div class="col-auto mr-auto">
           <router-link :to="{name: 'Search'}">
             <button v-if="location" type="button" class="btn cancel-btn-style">
                 <i class="fa fa-times"></i>
             </button>
           </router-link>
-        </section>
+        </div>
+        <div class="col-auto">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn language-btn-style active">
+              <input type="radio" name="language" id="english" autocomplete="off" checked>EN
+            </label>
+            <label class="btn language-btn-style">
+              <input type="radio" name="language" id="german" autocomplete="off">DE
+            </label>
+          </div>
+        </div>
       </section>
       <section class="row">
         <section class="col align-self-center">

@@ -33,6 +33,11 @@ body{
   margin-left: 2px;
 }
 
+.language-btn-style {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
 /*
 .vue-tags-input {
   max-width: initial;

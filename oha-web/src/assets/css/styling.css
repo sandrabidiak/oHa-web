@@ -14,10 +14,22 @@ body {
     white-space: nowrap;
 }
 
-.cancel-btn-style, .back-btn-style {
+.cancel-btn-style, .back-btn-style, .language-btn-style {
     background-color: #e4bd67;
     border-color: #729f98;
     color: #729f98;
+}
+
+.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover, 
+.term-rule-suggestion:hover, .term-specialization:hover, 
+.term-generalization:hover, .term-top-level:hover {
+    box-shadow: 2px 2px #486a66;
+    text-decoration: none !important;
+}
+
+.cancel-btn-style:hover, .back-btn-style:hover {
+    background-color: #729f98;
+    color: #f0eceb;
 }
 
 .term-rule-suggestion {
@@ -42,18 +54,6 @@ body {
 
 .invisible-link {
     text-decoration: none !important;
-}
-
-.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover, 
-.term-rule-suggestion:hover, .term-specialization:hover, 
-.term-generalization:hover, .term-top-level:hover  {
-    box-shadow: 2px 2px #486a66;
-    text-decoration: none !important;
-}
-
-.cancel-btn-style:hover, .back-btn-style:hover {
-    background-color: #729f98;
-    color: #f0eceb;
 }
 
 .card-style {
