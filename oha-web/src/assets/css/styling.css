@@ -81,11 +81,33 @@ body {
     text-decoration: none;
 }
 
-.footer {
+.vue-tags-input, .input {
+    background-color: #f0eceb;
+}
+
+.new-tag-input, .input {
+    background-color: #f0eceb;
+}
+
+/*
+.valid [data-v-7f2a58de], .tag[data-v-7f2a58de]{
+    background-color: #729f98;
+    color: #f0eceb;
+    border-radius: 18px;
+}
+
+.tag {
     background-color: #394422;
     color: #f0eceb;
-    text-align: left;
 }
+
+.valid {
+    background-color: #729f98; 
+    color: #f0eceb;
+    border-radius: 18px; 
+    display: flex;
+}
+*/
 
 div > p > a, button > a, .footer > div > a {
     color: #f0eceb;
@@ -108,23 +130,8 @@ div > a:hover {
     border-top-color: #729f98 !important;
 }
 
-
-/*
-.vue-tag-input > .input{
-    background-color: #f0eceb;
-    border-radius: 6px;
-}
-
-.valid {
-    background-color: #729f98; 
+.footer {
+    background-color: #394422;
     color: #f0eceb;
-    border-radius: 18px; 
-    display: flex;
+    text-align: left;
 }
-
-.vue-tag-input > .input > .tags > .tag.valid {
-    background-color: #729f98;
-    color: #f0eceb;
-    border-radius: 18px;
-}
-*/

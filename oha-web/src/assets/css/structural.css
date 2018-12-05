@@ -33,6 +33,12 @@ body{
   margin-left: 2px;
 }
 
+/*
+.vue-tags-input {
+  max-width: initial;
+}
+*/
+
 .carousel-style {
   max-height: 300px;
   width: 100%;
