@@ -90,6 +90,8 @@ export default {
   methods: {
     selectLocation(cityName) {
       this.$store.commit('setSelectedLocation', locationConstants[cityName]);
+      this.$store.dispatch('getSuggestions');
+      this.$store.dispatch('getResults');
     },
   },
 };
