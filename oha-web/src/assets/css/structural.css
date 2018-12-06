@@ -33,7 +33,7 @@ body{
   margin-left: 2px;
 }
 
-.language-btn-style {
+.language-btn-style, .language-btn-style-checked {
   margin-top: 2px;
   margin-left: 2px;
 }

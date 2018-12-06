@@ -11,11 +11,15 @@
         </div>
         <div class="col-auto">
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn language-btn-style active">
+            <label class="btn"
+              v-bind:class="{ 'language-btn-style-checked': $i18n.locale === 'en',
+              'language-btn-style': $i18n.locale !== 'en'}">
               <input @click="selectLanguage('en')"
                 type="radio" name="language" id="english" autocomplete="off" checked>EN
             </label>
-            <label class="btn language-btn-style">
+            <label class="btn"
+              v-bind:class="{ 'language-btn-style-checked': $i18n.locale === 'de',
+              'language-btn-style': $i18n.locale !== 'de'}">
               <input @click="selectLanguage('de')"
                 type="radio" name="language" id="german" autocomplete="off">DE
             </label>
@@ -97,6 +101,7 @@ export default {
     },
     selectLanguage(language) {
       this.$i18n.locale = language;
+      this.$store.commit('setSelectedLanguage', language);
     },
   },
 };

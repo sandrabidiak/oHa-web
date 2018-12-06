@@ -27,7 +27,7 @@ body {
     text-decoration: none !important;
 }
 
-.cancel-btn-style:hover, .back-btn-style:hover {
+.cancel-btn-style:hover, .back-btn-style:hover, .language-btn-style-checked {
     background-color: #729f98;
     color: #f0eceb;
 }

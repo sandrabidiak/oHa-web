@@ -12,6 +12,7 @@ export default new Vuex.Store({
     suggestions: [],
     results: {},
     selectedLocation: undefined,
+    selectedLanguage: 'en',
     selectedSliderValue: '1',
     inputTags: [],
   },
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     setSelectedLocation(state, location) {
       state.selectedLocation = location;
     },
+    setSelectedLanguage(state, language) {
+      state.selectedLanguage = language;
+    },
     setSliderValue(state, sliderValue) {
       state.selectedSliderValue = sliderValue;
     },
@@ -37,6 +41,7 @@ export default new Vuex.Store({
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/suggestions';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
+      const language = context.state.selectedLanguage;
       const sliderValue = context.state.selectedSliderValue;
       const searchTerms = context.state.inputTags.map(tag => tag.text);
 
@@ -46,7 +51,7 @@ export default new Vuex.Store({
         gla: location.gla,
         glo: location.glo,
         sr: 0,
-        lo: 'en',
+        lo: language,
       };
 
       axios.post(serviceUrl, searchObject, { headers })
@@ -57,6 +62,7 @@ export default new Vuex.Store({
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
+      const language = context.state.selectedLanguage;
       const sliderValue = context.state.selectedSliderValue;
       const searchTerms = context.state.inputTags.map(tag => tag.text);
 
@@ -66,7 +72,7 @@ export default new Vuex.Store({
         gla: location.gla,
         glo: location.glo,
         sr: 0,
-        lo: 'en',
+        lo: language,
       };
 
       axios.post(serviceUrl, searchObject, { headers })
