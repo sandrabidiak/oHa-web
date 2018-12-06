@@ -28,7 +28,12 @@
                     <b-carousel-slide v-for="(image,index) in selectedResult.im" :key ="index"
                       class="carousel-item">
                       <img slot="img" class="d-block img-fluid carousel-style"
-                      v-bind:src="image.im">
+                        v-bind:src="image.im">
+                    </b-carousel-slide>
+                    <b-carousel-slide v-if="!(selectedResult.im && selectedResult.im.length)"
+                      class="carousel-item">
+                      <img slot="img" class="d-block img-fluid carousel-style"
+                        src="../../assets/no-image-icon.png">
                     </b-carousel-slide>
                  </b-carousel>
               </section>

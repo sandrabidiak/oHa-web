@@ -17,7 +17,10 @@
           <div class="card-deck">
             <div class="card card-style">
               <router-link :to="{ name: 'Detail', params: {id: result.rid} }">
-                <img class="card-img-top" v-bind:src="result.im[0].im" alt="CardImg">
+                <img v-if="result.im.length && result.im[0].im" v-bind:src="result.im[0].im"
+                  class="card-img-top" alt="CardImg">
+                <img v-else src="../../assets/no-image-icon.png"
+                  class="card-img-top" alt="CardImg">
                 <div class="card-block p-2">
                   <p class="card-text">{{result.ti}}</p>
                 </div>

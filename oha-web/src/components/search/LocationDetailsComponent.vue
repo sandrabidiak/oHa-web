@@ -11,7 +11,8 @@
         </div>
         <div class="col-sm-8 col-lg-5 justify-self-xs-center mt-2">
           <span class="mr-2">Search radius: {{sliderValue}} km</span>
-          <b-form-input @change="onSliderChange($event)" :value="sliderValue" type="range" min="1" max="25" step="1">
+          <b-form-input @change="onSliderChange($event)" :value="sliderValue" type="range"
+            min="1" max="25" step="1">
           </b-form-input>
         </div>
       </section>
