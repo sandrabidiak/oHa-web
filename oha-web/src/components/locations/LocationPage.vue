@@ -12,22 +12,24 @@
         <div class="col-auto">
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn language-btn-style active">
-              <input type="radio" name="language" id="english" autocomplete="off" checked>EN
+              <input @click="selectLanguage('en')"
+                type="radio" name="language" id="english" autocomplete="off" checked>EN
             </label>
             <label class="btn language-btn-style">
-              <input type="radio" name="language" id="german" autocomplete="off">DE
+              <input @click="selectLanguage('de')"
+                type="radio" name="language" id="german" autocomplete="off">DE
             </label>
           </div>
         </div>
       </section>
       <section class="row">
         <section class="col align-self-center">
-          <h1 class="display-5 text-center">Choose your location</h1>
+          <h1 class="display-5 text-center">{{ $t('choose_location') }}</h1>
           <section class="row justify-content-around align-items-center location-row-height">
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation()">Current Location
+                  @click="selectLocation()">{{ $t('curr_location') }}
                 </button>
               </router-link>
             </div>
@@ -66,7 +68,7 @@
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation('vienna')">Vienna
+                  @click="selectLocation('vienna')">{{ $t('vienna') }}
                 </button>
               </router-link>
             </div>
@@ -92,6 +94,9 @@ export default {
       this.$store.commit('setSelectedLocation', locationConstants[cityName]);
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
+    },
+    selectLanguage(language) {
+      this.$i18n.locale = language;
     },
   },
 };
