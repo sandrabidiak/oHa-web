@@ -93,25 +93,11 @@ body {
     background-color: #f0eceb;
 }
 
-/*
-.valid [data-v-7f2a58de], .tag[data-v-7f2a58de]{
-    background-color: #729f98;
-    color: #f0eceb;
-    border-radius: 18px;
+.tag-custom li.tag {
+    background-color: #729f98 !important;
+    color: #f0eceb !important;
+    border-radius: 18px !important;
 }
-
-.tag {
-    background-color: #394422;
-    color: #f0eceb;
-}
-
-.valid {
-    background-color: #729f98; 
-    color: #f0eceb;
-    border-radius: 18px; 
-    display: flex;
-}
-*/
 
 div > p > a, button > a, .footer > div > a {
     color: #f0eceb;

@@ -12,19 +12,12 @@
         </section>
         <section class="col-md-10">
           <span v-for="(s,index) in suggestions" :key ="index">
-            <button v-if="s.stt == 'TERM_RULE_SUGGESTION'" class="btn term-rule-suggestion">
-              {{s.sst}}
-              <i class="fa fa-angle-up"></i>
-            </button>
-            <button v-if="s.stt === 'TERM_SPECIALIZATION'" class="btn term-specialization">
-              {{s.sst}}
-              <i class="fa fa-angle-up"></i>
-            </button>
-            <button v-if="s.stt === 'TERM_GENERALIZATION'" class="btn term-generalization">
-              {{s.sst}}
-              <i class="fa fa-angle-up"></i>
-            </button>
-            <button v-if="s.stt === 'TERM_TOP_LEVEL'" class="btn term-top-level">
+            <button v-bind:class="{
+              'term-rule-suggestion': s.stt === 'TERM_RULE_SUGGESTION',
+              'term-specialization': s.stt === 'TERM_SPECIALIZATION',
+              'term-generalization': s.stt === 'TERM_GENERALIZATION',
+              'term-top-level': s.stt === 'TERM_TOP_LEVEL',
+            }" class="btn">
               {{s.sst}}
               <i class="fa fa-angle-up"></i>
             </button>
