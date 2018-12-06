@@ -71,6 +71,10 @@ body {
     color: #f0eceb;
 }
 
+.fa {
+    font-size: larger;
+}
+
 .change-location-btn {
     background-color: #f0eceb;
     color:  #394422;
