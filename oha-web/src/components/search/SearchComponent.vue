@@ -7,7 +7,7 @@
             @tags-changed="newTags => onTagsChange(newTags)"/>
         </div>
         <div class="col-3 col-md-2">
-          <button class="btn search-btn-style" @click="search()">Search</button>
+          <button class="btn search-btn-style" @click="search()">{{ $t('search') }}</button>
         </div>
       </section>
     </section>

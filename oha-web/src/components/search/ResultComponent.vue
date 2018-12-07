@@ -8,7 +8,7 @@
       </section>
       <section class="row">
         <section class="col text-left mb-3">
-          <p>Results found: {{results.fr}} of {{results.trc}}</p>
+          <p>{{ $t('results') }}: {{results.fr}} {{ $t('of') }} {{results.trc}}</p>
         </section>
       </section>
       <section class="row">

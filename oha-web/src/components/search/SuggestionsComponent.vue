@@ -8,7 +8,7 @@
       </section>
       <section class="row justify-content-center">
         <section class="col text-left mb-3">
-          <p>Suggestions:</p>
+          <p>{{ $t('suggestions') }}:</p>
         </section>
         <section class="col-md-10">
           <span v-for="(s,index) in suggestions" :key ="index">

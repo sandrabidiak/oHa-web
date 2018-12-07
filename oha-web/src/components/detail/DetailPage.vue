@@ -5,7 +5,7 @@
         <section class="row">
           <section class="col">
             <router-link :to="{name: 'Search'}">
-              <button type="button" class="btn back-btn-style">Back</button>
+              <button type="button" class="btn back-btn-style">{{ $t('back') }}</button>
             </router-link>
           </section>
         </section>
@@ -18,7 +18,7 @@
                   <p v-html="selectedResult.sd"></p>
                   <button v-if="selectedResult.ur" class="btn home-page-btn">
                     <a class="invisible-link"
-                      v-bind:href="selectedResult.ur" target="_blank">Home Page
+                      v-bind:href="selectedResult.ur" target="_blank">{{ $t('home_page') }}
                     </a>
                   </button>
                 </div>

@@ -6,11 +6,11 @@
           <i class="fa fa-location-arrow mr-2"></i>  
           {{getLocationName()}}
           <router-link :to="{name: 'Locations'}">
-            <button class="btn btn-sm change-location-btn ml-4">Change Location</button>
+            <button class="btn btn-sm change-location-btn ml-4">{{ $t('change_location') }}</button>
           </router-link>
         </div>
         <div class="col-sm-8 col-lg-5 justify-self-xs-center mt-2">
-          <span class="mr-2">Search radius: {{sliderValue}} km</span>
+          <span class="mr-2">{{ $t('radius') }}: {{sliderValue}} km</span>
           <b-form-input @change="onSliderChange($event)" :value="sliderValue" type="range"
             min="1" max="25" step="1">
           </b-form-input>

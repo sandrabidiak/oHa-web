@@ -56,6 +56,10 @@ body {
     text-decoration: none !important;
 }
 
+.card-deck {
+    display: contents;
+} 
+
 .card-style {
     background-color: #729f98;
     color: #f0eceb;
