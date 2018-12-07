@@ -79,9 +79,15 @@ body {
     font-size: larger;
 }
 
-.change-location-btn {
+.change-location-btn, .nav-language-btn-style-checked {
     background-color: #f0eceb;
     color:  #394422;
+}
+
+.nav-language-btn-style {
+    background-color: #394422;
+    border-color: #f0eceb;
+    color: #f0eceb;
 }
 
 .change-location-btn:hover {

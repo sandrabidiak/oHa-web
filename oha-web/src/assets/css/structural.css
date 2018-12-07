@@ -38,6 +38,10 @@ body{
   margin-left: 2px;
 }
 
+.nav-language-btn-style-checked, .nav-language-btn-style {
+  margin-left: 2px;
+}
+
 .input-custom {
   max-width: initial !important;
 }
