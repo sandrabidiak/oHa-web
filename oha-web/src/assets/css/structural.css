@@ -96,3 +96,12 @@ body{
   width: 100%;
 }
 
+.footer p {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+.footer p+p {
+  display: none;
+}
