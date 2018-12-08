@@ -55,10 +55,10 @@ export default {
     onTagsChange(tags) {
       const isTagDeleted = tags.length < this.$store.state.inputTags.length;
       this.$store.commit('setInputTags', tags);
-      if(isTagDeleted) {
+      if (isTagDeleted) {
         this.$store.dispatch('getSuggestions');
         this.$store.dispatch('getResults');
-      }  
+      }
     },
     onSliderChange(value) {
       this.$store.commit('setSliderValue', value);

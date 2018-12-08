@@ -3,11 +3,27 @@
     <div v-if="selectedResult" class="h-100">
       <section class="container-fluid h-100">
         <section class="row">
-          <section class="col">
+          <div class="col-auto mr-auto">
             <router-link :to="{name: 'Search'}">
               <button type="button" class="btn back-btn-style">{{ $t('back') }}</button>
             </router-link>
-          </section>
+          </div>
+          <div class="col-auto">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn"
+                v-bind:class="{ 'language-btn-style-checked': $i18n.locale === 'en',
+                'language-btn-style': $i18n.locale !== 'en'}">
+                <input @click="selectLanguage('en')"
+                  type="radio" name="language" id="english" autocomplete="off" checked>EN
+              </label>
+              <label class="btn"
+                v-bind:class="{ 'language-btn-style-checked': $i18n.locale === 'de',
+                'language-btn-style': $i18n.locale !== 'de'}">
+                <input @click="selectLanguage('de')"
+                  type="radio" name="language" id="german" autocomplete="off">DE
+              </label>
+            </div>
+          </div>  
         </section>
         <section class="row my-3">
           <section class="col align-self-center">
@@ -68,6 +84,12 @@ export default {
         return undefined;
       }
       return this.$store.state.results.fa.find(r => r.rid === id);
+    },
+  },
+  methods: {
+    selectLanguage(language) {
+      this.$i18n.locale = language;
+      this.$store.commit('setSelectedLanguage', language);
     },
   },
 };

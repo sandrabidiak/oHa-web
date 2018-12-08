@@ -41,12 +41,12 @@ export default {
   },
   methods: {
     onSuggestionClick(event, suggestionTitle) {
-      let newTags = this.$store.state.inputTags;
+      const newTags = this.$store.state.inputTags;
       newTags.push({ text: suggestionTitle });
       this.$store.commit('setInputTags', newTags);
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
-    }
+    },
   },
 };
 </script>
