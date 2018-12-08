@@ -12,6 +12,7 @@ const localizationConstants = {
     of: 'of',
     home_page: 'Home Page',
     back: 'Back',
+    search_terms: 'Search Terms',
   },
   de: {
     choose_location: 'Wählen Sie deinen Standort',
@@ -26,6 +27,7 @@ const localizationConstants = {
     of: 'von',
     home_page: 'Startseite',
     back: 'Zurück',
+    search_terms: 'Suchbegriffe',
   },
 };
 export default localizationConstants;

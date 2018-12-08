@@ -11,7 +11,7 @@
       </section>
       <section class="row justify-content-md-center">
         <div class="col-8 col-md-6">
-          <vue-tags-input class="input-custom tag-custom" v-model="tag" :tags="tags"
+          <vue-tags-input v-bind:placeholder="$t('search_terms')" class="input-custom tag-custom" v-model="tag" :tags="tags"
             @tags-changed="newTags => onTagsChange(newTags)"/>
         </div>
         <div class="col-2 col-md-2">
