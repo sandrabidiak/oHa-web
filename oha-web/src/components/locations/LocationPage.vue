@@ -96,6 +96,7 @@ export default {
   methods: {
     selectLocation(cityName) {
       this.$store.commit('setSelectedLocation', locationConstants[cityName]);
+      this.$store.commit('setInputTags', []);
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
     },

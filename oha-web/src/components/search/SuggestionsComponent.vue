@@ -12,7 +12,7 @@
         </section>
         <section class="col-md-10">
           <span v-for="(s,index) in suggestions" :key ="index">
-            <button v-bind:class="{
+            <button @click="onSuggestionClick($event, s.sst)" v-bind:class="{
               'term-rule-suggestion': s.stt === 'TERM_RULE_SUGGESTION',
               'term-specialization': s.stt === 'TERM_SPECIALIZATION',
               'term-generalization': s.stt === 'TERM_GENERALIZATION',
@@ -40,6 +40,13 @@ export default {
     return { };
   },
   methods: {
+    onSuggestionClick(event, suggestionTitle) {
+      let newTags = this.$store.state.inputTags;
+      newTags.push({ text: suggestionTitle });
+      this.$store.commit('setInputTags', newTags);
+      this.$store.dispatch('getSuggestions');
+      this.$store.dispatch('getResults');
+    }
   },
 };
 </script>
