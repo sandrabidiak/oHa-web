@@ -1,8 +1,8 @@
 <template>
   <div class="full-page">
-    <LocationDetailsComponent/>
+    <SearchHeaderComponent/>
     <br>
-    <SearchComponent msg="Welcome to oha-web app"/>
+    <SearchComponent/>
     <br>
     <SuggestionsComponent/>
     <br>
@@ -13,7 +13,7 @@
 <script>
 import SearchComponent from './SearchComponent.vue';
 import SuggestionsComponent from './SuggestionsComponent.vue';
-import LocationDetailsComponent from './LocationDetailsComponent.vue';
+import SearchHeaderComponent from './SearchHeaderComponent.vue';
 import ResultComponent from './ResultComponent.vue';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   components: {
     SearchComponent,
     SuggestionsComponent,
-    LocationDetailsComponent,
+    SearchHeaderComponent,
     ResultComponent,
   },
 };

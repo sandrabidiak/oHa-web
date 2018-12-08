@@ -23,7 +23,7 @@
                   type="radio" name="language" id="german" autocomplete="off">DE
               </label>
             </div>
-          </div>  
+          </div>
         </section>
         <section class="row my-3">
           <section class="col align-self-center">

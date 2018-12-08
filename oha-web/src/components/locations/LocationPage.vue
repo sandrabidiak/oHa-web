@@ -4,7 +4,8 @@
       <section class="row">
         <div class="col-auto mr-auto">
           <router-link :to="{name: 'Search'}">
-            <button v-if="location" type="button" class="btn cancel-btn-style">
+            <button v-if="location" type="button"
+              class="btn cancel-btn-style" v-bind:disabled="isLoading">
                 <i class="fa fa-times"></i>
             </button>
           </router-link>
@@ -44,7 +45,8 @@
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation('poertschach')" v-bind:disabled="isLoading">Pörtschach am Wörthersee
+                  @click="selectLocation('poertschach')" v-bind:disabled="isLoading">
+                  Pörtschach am Wörthersee
                 </button>
               </router-link>
             </div>
@@ -53,14 +55,16 @@
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation('hallstatt')" v-bind:disabled="isLoading">Hallstatt
+                  @click="selectLocation('hallstatt')" v-bind:disabled="isLoading">
+                  Hallstatt
                 </button>
               </router-link>
             </div>
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation('stubaital')" v-bind:disabled="isLoading">Stubaital
+                  @click="selectLocation('stubaital')" v-bind:disabled="isLoading">
+                  Stubaital
                 </button>
               </router-link>
             </div>
@@ -69,14 +73,16 @@
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation('salzburg')" v-bind:disabled="isLoading">Salzburg
+                  @click="selectLocation('salzburg')" v-bind:disabled="isLoading">
+                  Salzburg
                 </button>
               </router-link>
             </div>
             <div class="col-md-4">
               <router-link class="invisible-link" :to="{name: 'Search'}">
                 <button class="btn location-btn-style"
-                  @click="selectLocation('vienna')" v-bind:disabled="isLoading">{{ $t('vienna') }}
+                  @click="selectLocation('vienna')" v-bind:disabled="isLoading">
+                  {{ $t('vienna') }}
                 </button>
               </router-link>
             </div>
@@ -101,7 +107,7 @@ export default {
     return {
       locationErrorMessage: '',
       isPopoverShown: false,
-      isLoading: false
+      isLoading: false,
     };
   },
   methods: {
@@ -116,43 +122,42 @@ export default {
       if (navigator.geolocation) {
         this.isLoading = true;
         navigator.geolocation.getCurrentPosition(this.getPosition, this.getError);
-      } else { 
-        this.locationErrorMessage = "Geolocation is not supported by this browser.";
+      } else {
+        this.locationErrorMessage = 'Geolocation is not supported by this browser.';
         setTimeout(() => this.isPopoverShown = !this.isPopoverShown, 0);
       }
     },
 
     getPosition(position) {
       this.$store.commit(
-        'setSelectedLocation', 
-        { 
+        'setSelectedLocation',
+        {
           name: 'curr_location',
           gla: position.coords.latitude,
-          glo: position.coords.longitude
-        }
+          glo: position.coords.longitude,
+        },
       );
       this.$store.commit('setInputTags', []);
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
       this.isLoading = false;
-      this.$router.push({ name: 'Search'});
+      this.$router.push({ name: 'Search' });
     },
 
     getError(error) {
       this.isLoading = false;
-      switch(error.code) {
+      switch (error.code) {
         case error.PERMISSION_DENIED:
-          this.locationErrorMessage = "You denied the request for Geolocation."
+          this.locationErrorMessage = 'You denied the request for Geolocation.';
           break;
         case error.POSITION_UNAVAILABLE:
-          this.locationErrorMessage = "Location information is unavailable."
+          this.locationErrorMessage = 'Location information is unavailable.';
           break;
         case error.TIMEOUT:
-          this.locationErrorMessage = "The request to get user location timed out."
+          this.locationErrorMessage = 'The request to get user location timed out.';
           break;
-        case error.UNKNOWN_ERROR:
-          this.locationErrorMessage = "An unknown error occurred."
-          break;
+        default:
+          this.locationErrorMessage = 'An unknown error occurred.';
       }
       setTimeout(() => this.isPopoverShown = !this.isPopoverShown, 0);
     },

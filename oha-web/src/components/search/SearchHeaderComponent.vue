@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'LocationDetailsComponent',
+  name: 'SearchHeaderComponent',
   computed: {
     location() {
       return this.$store.state.selectedLocation;
