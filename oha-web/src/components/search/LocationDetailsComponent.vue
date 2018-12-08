@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     getLocationName() {
-      return this.location ? this.location.name : this.$t('no_location');
+      return this.location ? this.$t(this.location.name) : this.$t('no_location');
     },
     selectLanguage(language) {
       this.$i18n.locale = language;
