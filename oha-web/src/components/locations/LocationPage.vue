@@ -123,7 +123,7 @@ export default {
         this.isLoading = true;
         navigator.geolocation.getCurrentPosition(this.getPosition, this.getError);
       } else {
-        this.locationErrorMessage = 'Geolocation is not supported by this browser.';
+        this.locationErrorMessage = this.$t('not_supported');
         setTimeout(() => this.isPopoverShown = !this.isPopoverShown, 0);
       }
     },
