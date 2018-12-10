@@ -148,16 +148,16 @@ export default {
       this.isLoading = false;
       switch (error.code) {
         case error.PERMISSION_DENIED:
-          this.locationErrorMessage = 'You denied the request for Geolocation.';
+          this.locationErrorMessage = this.$t('location_denied');
           break;
         case error.POSITION_UNAVAILABLE:
-          this.locationErrorMessage = 'Location information is unavailable.';
+          this.locationErrorMessage = this.$t('location_unavailable');
           break;
         case error.TIMEOUT:
-          this.locationErrorMessage = 'The request to get user location timed out.';
+          this.locationErrorMessage = this.$t('location_timeout');
           break;
         default:
-          this.locationErrorMessage = 'An unknown error occurred.';
+          this.locationErrorMessage = this.$t('location_error');
       }
       setTimeout(() => this.isPopoverShown = !this.isPopoverShown, 0);
     },
