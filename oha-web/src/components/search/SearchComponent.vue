@@ -5,8 +5,7 @@
         <div class="col-10 col-md-5">
           <span class="mr-2">{{ $t('radius') }}: {{sliderValue}} km</span>
           <b-form-input @change="onSliderChange($event)" :value="sliderValue" type="range"
-            min="1" max="25" step="1">
-          </b-form-input>
+            min="1" max="25" step="1"/>
         </div>
       </section>
       <section class="row justify-content-md-center">

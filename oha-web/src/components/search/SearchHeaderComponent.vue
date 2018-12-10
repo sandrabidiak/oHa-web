@@ -2,14 +2,14 @@
   <div>
     <section class="container-fluid">
       <section class="row location-detail-style">
-        <div class="col-12 col-sm-7 justify-content-sm-center my-2">
+        <div class="col-auto mr-auto justify-content-sm-center my-2">
           <i class="fa fa-location-arrow mr-2"></i>
           {{getLocationName()}}
           <router-link :to="{name: 'Locations'}">
             <button class="btn btn-sm change-location-btn ml-4">{{ $t('change_location') }}</button>
           </router-link>
         </div>
-        <div class="col-2 offset-sm-3">
+        <div class="col-auto offset-sm-3">
           <div class="btn-group btn-group-toggle my-2" data-toggle="buttons">
             <label class="btn btn-sm"
               v-bind:class="{ 'nav-language-btn-style-checked': $i18n.locale === 'en',

@@ -46,6 +46,10 @@ body{
   max-width: initial !important;
 }
 
+.fa {
+  font-size: larger;
+}
+
 .carousel-style {
   max-height: 300px;
   width: 100%;
@@ -54,8 +58,13 @@ body{
   overflow: hidden;
 }
 
+.card-deck {
+  display: contents;
+} 
+
 .card-style {
   height: 100%;
+  width: 100%;
   margin-bottom: 1rem !important;
 }
 
@@ -75,11 +84,27 @@ body{
   .card-img-top {
   height: 40vw;
   }
+
+  h1 {
+    font-size: 2.0rem;
+  }
 }
 
 @media (max-width: 575.98px) {
   .card-img-top {
   height: 50vw;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .location-btn-style {
+    line-height: 2;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
   }
 }
 
@@ -98,6 +123,10 @@ body{
   right: 0;
   bottom: 0;
   width: 100%;
+}
+
+.divider {
+  border-top-width: 2px !important;
 }
 
 .footer p {

@@ -56,10 +56,6 @@ body {
     text-decoration: none !important;
 }
 
-.card-deck {
-    display: contents;
-} 
-
 .card-style {
     background-color: #729f98;
     color: #f0eceb;
@@ -73,10 +69,6 @@ body {
 .location-detail-style {
     background-color: #394422;
     color: #f0eceb;
-}
-
-.fa {
-    font-size: larger;
 }
 
 .change-location-btn, .nav-language-btn-style-checked {
@@ -126,7 +118,6 @@ div > a:hover {
 }
 
 .divider {
-    border-top-width: 2px !important;
     border-top-color: #729f98 !important;
 }
 
