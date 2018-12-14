@@ -1,6 +1,6 @@
 <template>
   <div class="full-page">
-    <section class="container-fluid h-100">
+    <section v-if="results.fa && results.fa.length" class="container-fluid h-100">
       <section class="row">
         <section class="col">
           <div class="border-top divider my-4"></div>

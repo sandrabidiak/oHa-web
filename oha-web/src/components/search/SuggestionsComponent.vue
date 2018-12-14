@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="container-fluid">
+    <section v-if="suggestions.length" class="container-fluid">
       <section class="row">
         <section class="col-12">
           <div class="border-top divider my-4"></div>
