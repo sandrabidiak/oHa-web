@@ -37,7 +37,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    getSuggestions(context) {
+    getSuggestions(context, retry = 0) {
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/suggestions';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
@@ -56,9 +56,15 @@ export default new Vuex.Store({
 
       axios.post(serviceUrl, searchObject, { headers })
         .then(result => context.commit('setSuggestions', result.data))
-        .catch(console.error);
+        .catch((error) => {
+          if (retry < 3) {
+            setTimeout(() => context.dispatch('getSuggestions', retry + 1), 2000);
+          } else {
+            console.log('Exceeded max number of attempts', error);
+          }
+        });
     },
-    getResults(context) {
+    getResults(context, retry = 0) {
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
@@ -77,7 +83,13 @@ export default new Vuex.Store({
 
       axios.post(serviceUrl, searchObject, { headers })
         .then(result => context.commit('setResults', result.data))
-        .catch(console.error);
+        .catch((error) => {
+          if (retry < 3) {
+            setTimeout(() => context.dispatch('getResults', retry + 1), 2000);
+          } else {
+            console.log('Exceeded max number of attempts', error);
+          }
+        });
     },
   },
   /* getters: {
