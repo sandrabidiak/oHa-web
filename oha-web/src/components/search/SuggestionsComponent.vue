@@ -42,10 +42,13 @@ export default {
   methods: {
     onSuggestionClick(event, suggestionTitle) {
       const newTags = this.$store.state.inputTags;
-      newTags.push({ text: suggestionTitle });
-      this.$store.commit('setInputTags', newTags);
-      this.$store.dispatch('getSuggestions');
-      this.$store.dispatch('getResults');
+      const duplicate = newTags.find((tag) => tag.text === suggestionTitle);
+      if (!duplicate) {
+        newTags.push({ text: suggestionTitle });
+        this.$store.commit('setInputTags', newTags);
+        this.$store.dispatch('getSuggestions');
+        this.$store.dispatch('getResults');
+      }
     },
   },
 };
