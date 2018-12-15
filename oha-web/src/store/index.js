@@ -64,7 +64,7 @@ export default new Vuex.Store({
           }
         });
     },
-    getResults(context, pageNumber, retry = 0) {
+    getResults(context, retry = 0) {
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
@@ -77,7 +77,7 @@ export default new Vuex.Store({
         dkm: sliderValue,
         gla: location.gla,
         glo: location.glo,
-        sr: pageNumber,
+        sr: 0,
         lo: language,
       };
 
@@ -85,7 +85,7 @@ export default new Vuex.Store({
         .then(result => context.commit('setResults', result.data))
         .catch((error) => {
           if (retry < 3) {
-            setTimeout(() => context.dispatch('getResults', pageNumber, retry + 1), 2000);
+            setTimeout(() => context.dispatch('getResults', retry + 1), 2000);
           } else {
             console.log('Exceeded max number of attempts', error);
           }
