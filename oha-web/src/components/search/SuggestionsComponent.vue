@@ -47,7 +47,7 @@ export default {
         newTags.push({ text: suggestionTitle });
         this.$store.commit('setInputTags', newTags);
         this.$store.dispatch('getSuggestions');
-        this.$store.dispatch('getResults');
+        this.$store.dispatch('getResults', 0);
       }
     },
   },

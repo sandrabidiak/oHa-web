@@ -50,14 +50,14 @@ export default {
   methods: {
     search() {
       this.$store.dispatch('getSuggestions');
-      this.$store.dispatch('getResults');
+      this.$store.dispatch('getResults', 0);
     },
     onTagsChange(tags) {
       const isTagDeleted = tags.length < this.$store.state.inputTags.length;
       this.$store.commit('setInputTags', tags);
       if (isTagDeleted) {
         this.$store.dispatch('getSuggestions');
-        this.$store.dispatch('getResults');
+        this.$store.dispatch('getResults', 0);
       }
     },
     onSliderChange(value) {

@@ -115,7 +115,7 @@ export default {
       this.$store.commit('setSelectedLocation', locationConstants[cityName]);
       this.$store.commit('setInputTags', []);
       this.$store.dispatch('getSuggestions');
-      this.$store.dispatch('getResults');
+      this.$store.dispatch('getResults', 0);
     },
 
     selectCurrentLocation() {
@@ -139,7 +139,7 @@ export default {
       );
       this.$store.commit('setInputTags', []);
       this.$store.dispatch('getSuggestions');
-      this.$store.dispatch('getResults');
+      this.$store.dispatch('getResults', 0);
       this.isLoading = false;
       this.$router.push({ name: 'Search' });
     },
