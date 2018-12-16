@@ -48,21 +48,22 @@ export default {
     return { };
   },
   methods: {
-  },
-  mounted() {
-    // console.log('Hello i am mounted');
-    window.onscroll = () => {
-      // console.log('I sccrol')
-      const bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+    onScroll() {
+      const scrollTop = window.scrollY
+        || window.pageYOffset
+        || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+      const bottomOfWindow = scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+
       if (bottomOfWindow && this.offset <= this.$store.state.results.trc) {
-        // console.log('result call with offset ', this.offset)
         this.$store.dispatch('getAdditionalResults');
       }
     }
   },
+  mounted() {
+    document.addEventListener('scroll', this.onScroll, false);
+  },
   destroyed() {
-    // console.log('goodbye I selfdestructed')
-    window.onscroll = undefined;
+    document.removeEventListener('scroll', this.onScroll, false)
   }
 };
 </script>
