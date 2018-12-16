@@ -100,6 +100,7 @@ export default new Vuex.Store({
             setTimeout(() => context.dispatch('getResults', retry + 1), 2000);
           } else {
             console.log('Exceeded max number of attempts', error);
+            throw { err: error };
           }
         });
     },
