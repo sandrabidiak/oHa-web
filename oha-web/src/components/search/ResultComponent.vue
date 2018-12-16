@@ -40,11 +40,29 @@ export default {
     results() {
       return this.$store.state.results;
     },
+    offset() {
+      return this.$store.state.offset;
+    }
   },
   data() {
     return { };
   },
   methods: {
   },
+  mounted() {
+    // console.log('Hello i am mounted');
+    window.onscroll = () => {
+      // console.log('I sccrol')
+      const bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+      if (bottomOfWindow && this.offset <= this.$store.state.results.trc) {
+        // console.log('result call with offset ', this.offset)
+        this.$store.dispatch('getAdditionalResults');
+      }
+    }
+  },
+  destroyed() {
+    // console.log('goodbye I selfdestructed')
+    window.onscroll = undefined;
+  }
 };
 </script>
