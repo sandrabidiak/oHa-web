@@ -99,7 +99,6 @@ export default new Vuex.Store({
           if (retry < 3) {
             setTimeout(() => context.dispatch('getResults', retry + 1), 2000);
           } else {
-            console.log('Exceeded max number of attempts', error);
             throw { err: error };
           }
         });
@@ -125,6 +124,9 @@ export default new Vuex.Store({
         .then((result) => {
           context.commit('addResults', result.data);
           context.commit('setOffset', context.state.offset + 50);
+        })
+        .catch((error) => {
+          throw { err: error };
         });
     },
   },

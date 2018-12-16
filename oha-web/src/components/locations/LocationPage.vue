@@ -157,7 +157,7 @@ export default {
           this.locationErrorMessage = this.$t('location_timeout');
           break;
         default:
-          this.locationErrorMessage = this.$t('location_error');
+          this.locationErrorMessage = this.$t('unknown_error');
       }
       setTimeout(() => this.isPopoverShown = !this.isPopoverShown, 0);
     },

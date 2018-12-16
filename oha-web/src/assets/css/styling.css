@@ -126,3 +126,15 @@ div > a:hover {
     color: #f0eceb;
     text-align: left;
 }
+
+.modal-error-style .modal-header{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.modal-error-style .modal-body{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}

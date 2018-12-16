@@ -21,7 +21,8 @@ const localizationConstants = {
     location_denied: 'You denied the request for Geolocation.',
     location_unavailable: 'Location information is unavailable.',
     location_timeout: 'The request to get user location timed out.',
-    location_error: 'An unknown error occurred.',
+    unknown_error: 'An unknown error occurred.',
+    error: 'Error',
   },
   de: {
     choose_location: 'Wählen Sie deinen Standort',
@@ -45,7 +46,8 @@ const localizationConstants = {
     location_denied: 'Sie haben die Anfrage zur Standortbestimmung abgelehnt.',
     location_unavailable: 'Standortinformationen sind nicht verfügbar.',
     location_timeout: 'Die Anfrage zum Abrufen des Benutzerstandorts ist abgelaufen.',
-    location_error: 'Ein unbekannter Fehler ist aufgetreten.',
+    unknown_error: 'Ein unbekannter Fehler ist aufgetreten.',
+    error: 'Fehler',
   },
 };
 export default localizationConstants;

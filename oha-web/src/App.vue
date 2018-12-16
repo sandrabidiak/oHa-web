@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="full-page">
-    <router-view/>
     <ErrorHandlerComponent/>
+    <router-view/>
   </div>
 </template>
 
