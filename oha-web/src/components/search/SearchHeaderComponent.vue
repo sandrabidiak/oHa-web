@@ -4,7 +4,7 @@
       <section class="row location-detail-style">
         <div class="col-auto mr-auto justify-content-sm-center my-2">
           <i class="fa fa-location-arrow mr-2"></i>
-          {{getLocationName()}}
+          <span class="location-overflow">{{getLocationName()}}</span>
           <router-link :to="{name: 'Locations'}">
             <button class="btn btn-sm change-location-btn ml-4">{{ $t('change_location') }}</button>
           </router-link>

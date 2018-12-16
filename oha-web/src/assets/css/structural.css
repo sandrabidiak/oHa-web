@@ -98,6 +98,14 @@ body{
   h1 {
     font-size: 1.5rem;
   }
+
+  .location-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    width: 100px;
+  }
 }
 
 @media (min-width: 1200px) {
