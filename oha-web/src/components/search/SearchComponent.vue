@@ -38,9 +38,6 @@ export default {
       return this.$store.state.selectedSliderValue;
     },
   },
-  props: {
-    msg: String,
-  },
   data() {
     return {
       searchInput: '',

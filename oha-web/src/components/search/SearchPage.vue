@@ -24,5 +24,10 @@ export default {
     SearchHeaderComponent,
     ResultComponent,
   },
+  mounted() {
+    if(!this.$store.state.selectedLocation){
+      this.$router.push({ name: 'Locations' });
+    }
+  }
 };
 </script>

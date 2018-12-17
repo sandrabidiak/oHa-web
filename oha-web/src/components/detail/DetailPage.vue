@@ -68,29 +68,34 @@
         <div v-html="selectedResult.cr"></div>
       </footer>
     </div>
-    <div v-if="!selectedResult">
-      Oops! ERROR!
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'DetailPage',
-  computed: {
-    selectedResult() {
+  data() {
+    return {
+      selectedResult: this.getSelectedResult()
+    }
+  },
+  methods: {
+    getSelectedResult() {
       const id = this.$route.params.id;
       if (!this.$store.state.results.fa) {
         return undefined;
       }
       return this.$store.state.results.fa.find(r => r.rid === id);
     },
-  },
-  methods: {
     selectLanguage(language) {
       this.$i18n.locale = language;
       this.$store.commit('setSelectedLanguage', language);
     },
   },
+  mounted() {
+    if(!this.selectedResult){
+      this.$router.push({ name: 'Locations' });
+    }
+  }
 };
 </script>

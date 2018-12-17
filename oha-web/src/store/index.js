@@ -69,7 +69,7 @@ export default new Vuex.Store({
           if (retry < 3) {
             setTimeout(() => context.dispatch('getSuggestions', retry + 1), 2000);
           } else {
-            console.log('Exceeded max number of attempts', error);
+            throw { err: error };
           }
         });
     },
