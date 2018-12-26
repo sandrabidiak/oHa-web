@@ -102,6 +102,9 @@ export default {
     location() {
       return this.$store.state.selectedLocation;
     },
+    pagePosition() {
+      return this.$store.state.pagePosition;
+    },
   },
   data() {
     return {
@@ -166,6 +169,9 @@ export default {
       this.$i18n.locale = language;
       this.$store.commit('setSelectedLanguage', language);
     },
+  },
+  mounted() {
+    this.$store.commit('setPagePosition', 0);
   },
 };
 </script>
