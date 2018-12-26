@@ -12,6 +12,7 @@ export default new Vuex.Store({
     suggestions: [],
     results: {},
     offset: 50,
+    gettingAdditionalResults: false,
     selectedLocation: undefined,
     selectedLanguage: 'en',
     selectedSliderValue: '1',
@@ -22,15 +23,24 @@ export default new Vuex.Store({
       state.suggestions = suggestions;
     },
     setResults(state, results) {
+      if (results) {
+        results.trc = results.trc > 300 ? 300 : results.trc;
+      }
       state.results = results;
     },
     addResults(state, additionalResults) {
+      if (additionalResults) {
+        additionalResults.trc = additionalResults.trc > 300 ? 300 : additionalResults.trc;
+      }
       state.results.trc = additionalResults.trc;
       state.results.fr += additionalResults.fr;
       state.results.fa = state.results.fa.concat(additionalResults.fa);
     },
     setOffset(state, offset) {
       state.offset = offset;
+    },
+    setGettingAdditionalResults(state, gettingAdditionalResults) {
+      state.gettingAdditionalResults = gettingAdditionalResults;
     },
     setSelectedLocation(state, location) {
       state.selectedLocation = location;
@@ -104,6 +114,8 @@ export default new Vuex.Store({
         });
     },
     getAdditionalResults(context) {
+      context.commit('setGettingAdditionalResults', true);
+
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
@@ -124,8 +136,10 @@ export default new Vuex.Store({
         .then((result) => {
           context.commit('addResults', result.data);
           context.commit('setOffset', context.state.offset + 50);
+          context.commit('setGettingAdditionalResults', false);
         })
         .catch((error) => {
+          context.commit('setGettingAdditionalResults', false);
           throw { err: error };
         });
     },

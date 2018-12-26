@@ -42,6 +42,9 @@ export default {
     },
     offset() {
       return this.$store.state.offset;
+    },
+    gettingAdditionalResults() {
+      return this.$store.state.gettingAdditionalResults;
     }
   },
   data() {
@@ -54,7 +57,9 @@ export default {
         || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
       const bottomOfWindow = scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
-      if (bottomOfWindow && this.offset <= this.$store.state.results.trc) {
+      if (bottomOfWindow 
+          && this.offset < this.$store.state.results.trc
+          && !this.gettingAdditionalResults) {
         this.$store.dispatch('getAdditionalResults');
       }
     }
