@@ -13,6 +13,7 @@ export default new Vuex.Store({
     results: {},
     offset: 50,
     gettingAdditionalResults: false,
+    pagePosition: 0,
     selectedLocation: undefined,
     selectedLanguage: 'en',
     selectedSliderValue: '1',
@@ -41,6 +42,9 @@ export default new Vuex.Store({
     },
     setGettingAdditionalResults(state, gettingAdditionalResults) {
       state.gettingAdditionalResults = gettingAdditionalResults;
+    },
+    setPagePosition(state, pagePosition) {
+      state.pagePosition = pagePosition;
     },
     setSelectedLocation(state, location) {
       state.selectedLocation = location;

@@ -15,16 +15,14 @@
          <section class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch"
           v-for="(result,index) in results.fa" :key ="index">
           <div class="card-deck">
-            <div class="card card-style">
-              <router-link :to="{ name: 'Detail', params: {id: result.rid} }">
-                <img v-if="result.im.length && result.im[0].im" v-bind:src="result.im[0].im"
-                  class="card-img-top" alt="CardImg">
-                <img v-else src="../../assets/no-image-icon.png"
-                  class="card-img-top" alt="CardImg">
-                <div class="card-block p-2">
-                  <p class="card-text">{{result.ti}}</p>
-                </div>
-              </router-link>
+            <div @click="selectPagePosition(result.rid)" class="card card-style">
+              <img v-if="result.im.length && result.im[0].im" v-bind:src="result.im[0].im"
+                class="card-img-top" alt="CardImg">
+              <img v-else src="../../assets/no-image-icon.png"
+                class="card-img-top" alt="CardImg">
+              <div class="card-block p-2">
+                <p class="card-text">{{result.ti}}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -45,7 +43,10 @@ export default {
     },
     gettingAdditionalResults() {
       return this.$store.state.gettingAdditionalResults;
-    }
+    },
+    pagePosition() {
+      return this.$store.state.pagePosition;
+    },
   },
   data() {
     return { };
@@ -62,10 +63,16 @@ export default {
           && !this.gettingAdditionalResults) {
         this.$store.dispatch('getAdditionalResults');
       }
+    },
+    selectPagePosition(id) { 
+      const currentPosition = window.scrollY;    
+      this.$store.commit('setPagePosition', currentPosition);
+      this.$router.push({ name: 'Detail', params: {id: id} });
     }
   },
   mounted() {
     document.addEventListener('scroll', this.onScroll, false);
+    window.scrollTo(0, this.pagePosition);
   },
   destroyed() {
     document.removeEventListener('scroll', this.onScroll, false)
