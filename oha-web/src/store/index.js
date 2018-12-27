@@ -21,7 +21,8 @@ export default new Vuex.Store({
   },
   mutations: {
     setSuggestions(state, suggestions) {
-      state.suggestions = suggestions;
+      state.suggestions = suggestions.filter((items, pos, self) =>
+        self.findIndex(v => v.sst === items.sst) === pos);
     },
     setResults(state, results) {
       if (results) {
