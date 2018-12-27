@@ -28,6 +28,20 @@
         </section>
       </section>
     </section>
+    <section v-else>
+      <section class="row">
+        <section class="col">
+          <div class="border-top divider my-4"></div>
+        </section>
+      </section>
+      <section class="row justify-content-center">
+        <section class="col-sm-3 align-self-center">
+          <div class="alert alert-warning text-center" role="alert">
+            <strong>{{ $t('no_results') }}</strong>
+          </div>
+        </section>
+      </section>
+    </section>
   </div>
 </template>
 

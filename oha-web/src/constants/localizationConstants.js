@@ -23,6 +23,7 @@ const localizationConstants = {
     location_timeout: 'The request to get user location timed out.',
     unknown_error: 'An unknown error occurred.',
     error: 'Error',
+    no_results: 'No results found!',
   },
   de: {
     choose_location: 'Wählen Sie deinen Standort',
@@ -48,6 +49,7 @@ const localizationConstants = {
     location_timeout: 'Die Anfrage zum Abrufen des Benutzerstandorts ist abgelaufen.',
     unknown_error: 'Ein unbekannter Fehler ist aufgetreten.',
     error: 'Fehler',
+    no_results: 'Keine Ergebnisse gefunden!',
   },
 };
 export default localizationConstants;
