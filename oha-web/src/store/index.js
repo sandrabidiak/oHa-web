@@ -29,6 +29,19 @@ export default new Vuex.Store({
       if (results) {
         results.trc = results.trc > 300 ? 300 : results.trc;
       }
+
+      // sort images by "lo" attribute
+      if (results && results.fa) {
+        results.fa = results.fa.map((result) => {
+          if (result.im) {
+            result.im.sort((a, b) => a.lo - b.lo);
+            return result;
+          } else {
+            return result;
+          }
+        });
+      }
+
       state.results = results;
     },
     addResults(state, additionalResults) {
@@ -37,6 +50,19 @@ export default new Vuex.Store({
       }
       state.results.trc = additionalResults.trc;
       state.results.fr += additionalResults.fr;
+
+      // sort images by "lo" attribute
+      if (additionalResults && additionalResults.fa) {
+        additionalResults.fa = additionalResults.fa.map((result) => {
+          if (result.im) {
+            result.im.sort((a, b) => a.lo - b.lo);
+            return result;
+          } else {
+            return result;
+          }
+        });
+      }
+
       state.results.fa = state.results.fa.concat(additionalResults.fa);
     },
     setOffset(state, offset) {
