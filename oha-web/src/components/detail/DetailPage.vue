@@ -98,6 +98,7 @@ export default {
     if(!this.selectedResult){
       this.$router.push({ name: 'Locations' });
     }
+    window.scrollTo(0, 0);
   }
 };
 </script>
