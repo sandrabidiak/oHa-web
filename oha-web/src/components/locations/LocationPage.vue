@@ -165,8 +165,10 @@ export default {
     selectLanguage(language) {
       this.$i18n.locale = language;
       this.$store.commit('setSelectedLanguage', language);
-      this.$store.dispatch('getSuggestions');
-      this.$store.dispatch('getResults');
+      if(this.$store.state.selectedLocation) {
+        this.$store.dispatch('getSuggestions');
+        this.$store.dispatch('getResults'); 
+      }
     },
   },
   mounted() {
