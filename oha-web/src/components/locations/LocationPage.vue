@@ -102,9 +102,6 @@ export default {
     location() {
       return this.$store.state.selectedLocation;
     },
-    pagePosition() {
-      return this.$store.state.pagePosition;
-    },
   },
   data() {
     return {
