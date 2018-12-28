@@ -1,6 +1,15 @@
 <template>
   <div class="full-page">
-    <section v-if="results.fa && results.fa.length" class="container-fluid h-100">
+    <section v-if="gettingResults" class="container-fluid h-100">
+      <section class="row justify-content-center">
+        <section>
+          <section class="col-sm-2 align-self-center">
+            <i class="fa fa-refresh fa-spin"></i>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section v-else-if="results.fa && results.fa.length" class="container-fluid h-100">
       <section class="row">
         <section class="col">
           <div class="border-top divider my-4"></div>
@@ -12,7 +21,7 @@
         </section>
       </section>
       <section class="row">
-         <section class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch"
+        <section class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch"
           v-for="(result,index) in results.fa" :key ="index">
           <div class="card-deck">
             <div @click="selectPagePosition(result.rid)" class="card card-style">
@@ -25,6 +34,13 @@
               </div>
             </div>
           </div>
+        </section>
+      </section>
+      <section class="row justify-content-center">
+        <section v-if="gettingAdditionalResults">
+          <section class="col-sm-2 align-self-center">
+            <i class="fa fa-refresh fa-spin"></i>
+          </section>
         </section>
       </section>
     </section>
@@ -54,6 +70,9 @@ export default {
     },
     offset() {
       return this.$store.state.offset;
+    },
+    gettingResults() {
+      return this.$store.state.gettingResults;
     },
     gettingAdditionalResults() {
       return this.$store.state.gettingAdditionalResults;

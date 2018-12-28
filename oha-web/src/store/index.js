@@ -12,6 +12,7 @@ export default new Vuex.Store({
     suggestions: [],
     results: {},
     offset: 50,
+    gettingResults: false,
     gettingAdditionalResults: false,
     pagePosition: 0,
     selectedLocation: undefined,
@@ -40,6 +41,9 @@ export default new Vuex.Store({
     },
     setOffset(state, offset) {
       state.offset = offset;
+    },
+    setGettingResults(state, gettingResults) {
+      state.gettingResults = gettingResults;
     },
     setGettingAdditionalResults(state, gettingAdditionalResults) {
       state.gettingAdditionalResults = gettingAdditionalResults;
@@ -89,6 +93,8 @@ export default new Vuex.Store({
         });
     },
     getResults(context, retry = 0) {
+      context.commit('setGettingResults', true);
+
       const serviceUrl = serviceConstants.baseUrl + '/v1/request/search';
       const headers = { Authorization: serviceConstants.authorizationHeader };
       const location = context.state.selectedLocation;
@@ -109,11 +115,13 @@ export default new Vuex.Store({
         .then((result) => {
           context.commit('setResults', result.data);
           context.commit('setOffset', 50);
+          context.commit('setGettingResults', false);
         })
         .catch((error) => {
           if (retry < 3) {
             setTimeout(() => context.dispatch('getResults', retry + 1), 2000);
           } else {
+            context.commit('setGettingResults', false);
             throw { err: error };
           }
         });
