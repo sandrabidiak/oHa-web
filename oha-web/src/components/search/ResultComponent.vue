@@ -25,7 +25,7 @@
           v-for="(result,index) in results.fa" :key ="index">
           <div class="card-deck">
             <div @click="selectPagePosition(result.rid)" class="card card-style">
-              <img v-if="result.im.length && result.im[0].im" v-bind:src="result.im[0].im"
+              <img v-if="result.im.length && result.im[0].im" v-bind:src="getProxyUrl(result.im[0].im)"
                 class="card-img-top" alt="CardImg">
               <img v-else src="../../assets/no-image-icon.png"
                 class="card-img-top" alt="CardImg">
@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import { getProxyUrl } from '../../shared/utilities';
+
 export default {
   name: 'ResultComponent',
   computed: {
@@ -101,7 +103,10 @@ export default {
       const currentPosition = window.scrollY;    
       this.$store.commit('setPagePosition', currentPosition);
       this.$router.push({ name: 'Detail', params: {id: id} });
-    }
+    },
+    getProxyUrl(url) {
+      return getProxyUrl(url);
+    },
   },
   mounted() {
     document.addEventListener('scroll', this.onScroll, false);
