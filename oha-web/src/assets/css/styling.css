@@ -2,12 +2,12 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #e4bd67;
-    color:  #394422;
+    background-color: #d0dee1;
+    color:  #173e43;
 }
 
 .location-btn-style, .search-btn-style, .home-page-btn {
-    background-color:#729f98;
+    background-color:#3fb0ac;
     color: #f0eceb;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -17,50 +17,54 @@ body {
 }
 
 .cancel-btn-style, .back-btn-style, .language-btn-style {
-    background-color: #e4bd67;
-    border-color: #729f98;
-    color: #729f98;
+    background-color: #d0dee1;
+    border-color: #3fb0ac;
+    color: #3fb0ac;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
         0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .language-btn-style-checked {
-    background-color: #729f98;
+    background-color: #3fb0ac;
     color: #f0eceb;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
         0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
-.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover, 
+.location-btn-style:hover, .search-btn-style:hover, .home-page-btn:hover, .card-style:hover {
+    box-shadow: 2px 2px #369693;
+    text-decoration: none !important;
+}
+ 
 .term-rule-suggestion:hover, .term-specialization:hover, 
 .term-generalization:hover, .term-top-level:hover {
-    box-shadow: 2px 2px #486a66;
+    box-shadow: 2px 2px #cccc00;
     text-decoration: none !important;
 }
 
 .cancel-btn-style:hover, .back-btn-style:hover {
-    background-color: #729f98;
+    background-color: #369693;
     color: #f0eceb;
 }
-
+ 
 .term-rule-suggestion {
-    background-color: #729f98;
-    color: #f0eceb;
+    background-color: #ffdb4d;
+    color: #173e43;
 } 
 
 .term-specialization {
-    background-color: #86aca7;
-    color: #f0eceb;
+    background-color: #ffff80;
+    color: #173e43;
 }
 
 .term-generalization {
-    background-color: #a4c1bd;
-    color: #f0eceb;
+    background-color: #ffffcc;
+    color: #173e43;
 }
 
 .term-top-level {
-    background-color: #c2d6d3;
-    color: #5d8982;
+    background-color: #ffeb3b;
+    color: #173e43;
 }
 
 .invisible-link {
@@ -68,7 +72,7 @@ body {
 }
 
 .card-style {
-    background-color: #729f98;
+    background-color: #3fb0ac;
     color: #f0eceb;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
         0 2px 10px 0 rgba(0,0,0,0.12);
@@ -80,7 +84,7 @@ body {
 }
 
 .location-detail-style {
-    background-color: #394422;
+    background-color: #173e43;
     color: #f0eceb;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
         0 2px 10px 0 rgba(0,0,0,0.12);
@@ -88,13 +92,13 @@ body {
 
 .change-location-btn, .nav-language-btn-style-checked {
     background-color: #f0eceb;
-    color:  #394422;
+    color:  #173e43;
 }
 
 .nav-language-btn-style {
-    background-color: #394422;
-    border-color: #f0eceb;
-    color: #f0eceb;
+    background-color: #173e43;
+    border-color: #f4f1f0;
+    color: #f4f1f0;
 }
 
 .change-location-btn:hover {
@@ -107,17 +111,27 @@ body {
         0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
+.form-control {
+    border: none;
+    background-color: #d0dee1;
+}
+
+.form-control:focus {
+    border: none;
+    background-color: #d0dee1;
+}
+
 .vue-tags-input, .input {
-    background-color: #f0eceb;
+    background-color: #fff;
 }
 
 .new-tag-input, .input {
-    background-color: #f0eceb;
+    background-color: #fff;
 }
 
 .tag-custom li.tag {
-    background-color: #729f98 !important;
-    color: #f0eceb !important;
+    background-color: #3fb0ac !important;
+    color: #fff !important;
     border-radius: 18px !important;
 }
 
@@ -130,19 +144,19 @@ div > p > a:hover, div > a:hover, button > a:hover, .footer > div > a:hover {
 }
 
 div > a {
-    color: #729f98;
+    color: #3fb0ac;
 }
 
 div > a:hover {
-    color: #729f98;
+    color: #3fb0ac;
 }
 
 .divider {
-    border-top-color: #729f98 !important;
+    border-top-color: #3fb0ac !important;
 }
 
 .footer {
-    background-color: #394422;
+    background-color: #173e43;
     color: #f0eceb;
     text-align: left;
 }
