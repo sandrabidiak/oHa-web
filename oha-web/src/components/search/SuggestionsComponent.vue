@@ -17,7 +17,7 @@
               'term-specialization': s.stt === 'TERM_SPECIALIZATION',
               'term-generalization': s.stt === 'TERM_GENERALIZATION',
               'term-top-level': s.stt === 'TERM_TOP_LEVEL',
-            }" class="btn">
+            }" class="btn suggestion-btn">
               {{s.sst}}
               <i class="fa fa-angle-up"></i>
             </button>
