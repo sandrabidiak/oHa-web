@@ -10,6 +10,14 @@ import './assets/css/structural.css';
 import store from './store';
 import router from './router';
 
+window.addEventListener('load', () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../service-worker.js')
+      .then(v => console.log('service worker registered!'))
+      .catch(err => console.error('service worker registration error: ', err));
+  }
+});
+
 Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);
