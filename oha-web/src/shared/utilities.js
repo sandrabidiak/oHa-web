@@ -3,9 +3,12 @@ import serviceConstants from '../constants/serviceConstants';
 export function getProxyUrl(url) {
   if(url) {
     let proxyUrl = '';
-    const urlArray = url.split('https://');
-    if(urlArray.length > 1) {
-      proxyUrl = serviceConstants.proxyUrl + urlArray[1];
+    const urlArrayHttps = url.split('https://');
+    const urlArrayHttp = url.split('http://')
+    if(urlArrayHttps.length > 1) {
+      proxyUrl = serviceConstants.proxyUrl + urlArrayHttps[1];
+    } else if(urlArrayHttp.length > 1) {
+      proxyUrl = serviceConstants.proxyUrl + urlArrayHttp[1];
     } else {
       proxyUrl = url;
     }
