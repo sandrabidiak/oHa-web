@@ -1,0 +1,17 @@
+{
+    "name": "oHA-web",
+    "short_name": "oHA-web",
+    "start_url": "/",
+    "background_color": "#d0dee1",
+    "theme_color": "#d0dee1",
+    "orientation": "portrait-primary",
+    "display": "standalone",
+    "icons": [{
+        "src": "/icon.png",
+        "type": "image/png",
+        "sizes": "144x144"
+    }],
+    "dir": "ltr",
+    "lang": "en-US",
+    "scope": "/"
+}

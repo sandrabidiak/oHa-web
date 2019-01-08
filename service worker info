@@ -1,0 +1,6 @@
+Steps to make service workers work:
+1. Add service worker registration script in main.js (with path from dist)
+2. Install npm module sw-precache globally
+3. Build app
+4. From built "dist" folder execute command sw-precache to generate service worker.
+Command has to be executed each time the app is built to updated service worker
