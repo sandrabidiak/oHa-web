@@ -46,6 +46,11 @@ body {
     background-color: #369693;
     color: #f0eceb;
 }
+
+.btn:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
  
 .term-rule-suggestion {
     background-color: #ffdb4d;
@@ -119,6 +124,8 @@ body {
 .form-control:focus {
     border: none;
     background-color: #d0dee1;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .vue-tags-input, .input {
