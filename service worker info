@@ -4,3 +4,4 @@ Steps to make service workers work:
 3. Build app
 4. From built "dist" folder execute command sw-precache to generate service worker.
 Command has to be executed each time the app is built to updated service worker
+5. Manually add functions for caching POST requests to service worker script (also add dexie.min database wrapper script)
