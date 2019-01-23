@@ -279,7 +279,13 @@ self.addEventListener('fetch', function(event) {
 				// If it works, put the response into IndexedDB
 				cachePut(event.request.clone(), response.clone(), db.post_cache);
 				return response;
-			})
+      })
+      .then(function(response) {
+        // delete results if offset is 0
+        //cachePut(event.request.clone(), response.clone(), db.post_cache);
+        cleanCache(event.request.clone(), db.post_cache);
+				return response;
+      }) 
 			.catch(function() {
 				// If it does not work, return the cached response. If the cache does not
 				// contain a response for our request, it will give us a 503-response
@@ -312,9 +318,9 @@ function serializeRequest(request) {
 	  // Only if method is not `GET` or `HEAD` is the request allowed to have body.
 	  if (request.method !== 'GET' && request.method !== 'HEAD') {
 		return request.clone().text().then(function(body) {
-		  serialized.body = body;
+      serialized.body = body;
       // return Promise.resolve(serialized);
-      return Promise.resolve(request.url);
+      return Promise.resolve(request.url+JSON.parse(body).sr);
 		});
 	  }
     // return Promise.resolve(serialized);
@@ -412,6 +418,21 @@ function cacheMatch(request, store) {
 	});
 }
  
+function cleanCache(request, store){
+  getPostId(request.clone())
+	.then(function(id) {
+    var offset = id.split('search').length > 1 ? id.split('search')[1] : undefined;
+    if(offset === '0'){
+      store.delete('"' + request.url + '50' + '"');
+      store.delete('"' + request.url + '100' + '"');
+      store.delete('"' + request.url + '150' + '"');
+      store.delete('"' + request.url + '200' + '"');
+      store.delete('"' + request.url + '250' + '"');
+      store.delete('"' + request.url + '300' + '"');
+    }
+  })
+}
+
 /**
  * Returns a string identifier for our POST request.
  * 
