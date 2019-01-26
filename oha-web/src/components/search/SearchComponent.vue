@@ -46,6 +46,15 @@ export default {
   },
   methods: {
     search() {
+      if(this.tag !== ''){
+        const newTags = this.$store.state.inputTags;
+        const duplicate = newTags.find((tag) => tag.text === this.tag);
+        if(!duplicate){
+          newTags.push({ text: this.tag });
+          this.$store.commit('setInputTags', newTags);
+          this.tag = '';
+        }
+      }
       this.$store.dispatch('getSuggestions');
       this.$store.dispatch('getResults');
     },
